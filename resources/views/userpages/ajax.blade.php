@@ -293,89 +293,47 @@ $(document).ready(function() {
       });
   });
 });
+   //to save customer message
+   $(document).ready(function () {
+    $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
 
+         
+        $('.text-danger').html('');
 
-        
-if ((window.location.pathname === '/admin' || window.location.pathname === '/admin/add-graphic-details' || window.location.pathname === '/admin/add-marketing-details' || window.location.pathname === '/admin/add-pos-details' || window.location.pathname === '/admin/add-web-details' || window.location.pathname === '/admin/add-about-service'  || window.location.pathname === '/admin/admin-profile' || window.location.pathname === '/admin/add-feedback' || window.location.pathname === '/admin/add-blog' || window.location.pathname === '/admin/add-service' || window.location.pathname === '/admin/users' || window.location.pathname === '/admin/customer-messages' || window.location.pathname === '/admin/website-settings' || window.location.pathname === '/admin/add-slider-data' || window.location.pathname === '/admin/add-projects') && !localStorage.getItem('token')) {
-        window.location.href = '/';  
-    }
+        $.ajax({
+            url: "{{ route('submit.message') }}",
+            method: "POST",
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.status === 'success') {
+                    Swal.fire(
+                        'Message Sent!',
+                        'Our team will reach you shortly.',
+                        'success'
+                    );
+                    $('#contactForm')[0].reset();  
+                }
+            },
+            error: function (response) {
+                if (response.status === 422) {
+                    let errors = response.responseJSON.errors;
  
+                    $.each(errors, function (field, message) {
+                        $('#error-' + field).text(message[0]);
+                    });
 
-
- 
-
-     //to open admin page
-   $('.admin').click(function () {
-    if (!localStorage.getItem('token')) {
-        alert('You need to be logged in to access this page.');
-        window.location.href = '/';   
-        return;
-    }
-
-    var baseUrl = "{{ url('') }}";  
-    $.ajax({
-        url: baseUrl + '/admin',   
-        type: 'GET',
-        success: function (response) {
-            window.location.href = '/admin';   
-        },
-        error: function (xhr, status, error) {
-            console.error('AJAX Error: ', status, error);
-        }
-    });
-});
-
-    
-});
-
-
-
-//to open login page
-$(document).ready(function() {
-    $('.signIn').on('click', function() {
-        $.ajax({
-            url: '/login',
-            method: 'GET',
-            success: function(response) {
-                window.location.href = '/login';
-            },
-            error: function(xhr) {
-                alert('Error: ' + xhr.statusText);
+                    Swal.fire(
+                        'Error!',
+                        'Please correct the highlighted fields and try again.',
+                        'error'
+                    );
+                }
             }
         });
     });
 });
 
-//to open register page
-$(document).ready(function() {
-    $('.signUp').on('click', function() {
-        $.ajax({
-            url: '/register',
-            method: 'GET',
-            success: function(response) {
-                window.location.href = '/register';
-            },
-            error: function(xhr) {
-                alert('Error: ' + xhr.statusText);
-            }
-        });
-    });
-});
-
-//to open frontend user page
-$(document).ready(function() {
-    $('.userpage').on('click', function() {
-        $.ajax({
-            url: '/',
-            method: 'GET',
-            success: function(response) {
-                window.location.href = '/';
-            },
-            error: function(xhr) {
-                alert('Error: ' + xhr.statusText);
-            }
-        });
-    });
 });
  
 </script>

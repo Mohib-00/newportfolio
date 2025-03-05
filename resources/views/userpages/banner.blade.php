@@ -9,7 +9,6 @@
                 <p class="hero-section-col-one-text-a text-white">
                     Experience the new way to handle business with advanced AI-infused ERP solution.
                 </p>
-                <a class="btn btn-outline-light nav-link btn-sm hero-section-col-one-cta-btn theme-btn-radius btn-width " href="/register">Start Your Free Trial</a>
                 <p class="d-flex flex-wrap mt-3 hero-section-features-list">
                     <span class="text-white pe-md-4">
                         <img class="check-icon" src="./index_files/White tick.png" alt="White tick">Online Accounting Software

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -174,8 +175,9 @@ public function logout() {
  
      
      public function home(){ 
-         $user = Auth::user();         
-         return view('userpages.home', compact('user'));
+         $user = Auth::user();   
+         $projects = Project::all();    
+         return view('userpages.home', compact('user','projects'));
      }
      public function account(){ 
         $user = Auth::user();         
@@ -233,7 +235,8 @@ public function logout() {
 
    public function  users(){ 
     $user = Auth::user();
-    $users = User::all();
+    $users = User::orderBy('created_at', 'desc')
+    ->get(); 
     return view('adminpages.users', ['userName' => $user->name,'userEmail' => $user->email],compact('users'));
   }
 

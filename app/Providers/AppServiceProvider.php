@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Message;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $count = Message::whereHas('messageStatus', function ($query) {
+            $query->where('status', 1);
+        })->count();
+    
+        view()->share([
+            'count' => $count,
+        ]);
     }
 }

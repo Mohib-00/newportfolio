@@ -8,35 +8,39 @@
                 <b class="text-white d-block pb-3">Send Us a Message</b>
                 <div class="bg-white form-wrapper px-5 py-4 pb-md-5 pb-lg-4">
 
-                    <form id="contact_form">
+                    <form id="contactForm" class="contact-form">
                         <div class="mb-3 mt-3">
                             <label for="FullName" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="FullName" placeholder="" name="FullName">
+                            <input type="text" name="name" class="form-control">
+                            <small class="text-danger" id="error-name"></small>
                             <h6 id="fullName"></h6>
                         </div>
                         <div class="mb-3 mt-3">
                             <label for="Email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="Email" placeholder="" name="Email">
+                            <input type="text" name="email" class="form-control">
+                            <small class="text-danger" id="error-email"></small>
                             <h6 id="email"></h6>
                         </div>
                         <div class="mb-3 mt-3">
                             <label for="Subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="Subject" placeholder="" name="Subject">
+                            <input type="text" class="form-control" name="subject">
+                            <small class="text-danger" id="error-subject"></small>
                         </div>
                         <div class="mb-3">
                             <label for="ContactNumber" class="form-label">Contact Number *</label>
-                            <input type="text" class="form-control" id="ContactNumber" placeholder="" name="ContactNumber">
+                            <input type="number" name="phone" class="form-control">
+                            <small class="text-danger" id="error-phone"></small>
                             <h6 id="contactNumber"></h6>
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                            <textarea class="form-control" id="Message" rows="3"></textarea>
+                            <textarea name="message" class="form-control"></textarea>
+                            <small class="text-danger" id="error-message"></small>
                         </div>
-
-                        <button type="button" class="btn btn-sm theme-btn-radius form-submit mt-3 w-100" id="btnSubmit">
-                            Send Message
-                        </button>
+                        <div>
+                            <input type="submit" value="Send Message" class="btn btn-sm theme-btn-radius form-submit mt-3 w-100">
+                        </div>
                     </form>
                 </div>
             </div>

@@ -1,0 +1,152 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\AboutService;
+use App\Models\Message;
+use App\Models\ProductDetail;
+use App\Models\Project;
+use App\Models\Setting;
+use App\Models\Slider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
+class ProductDetailscontroller extends Controller
+{
+    public function  addproductdetails(){ 
+        $user = Auth::user();
+        $products = ProductDetail::orderBy('created_at', 'desc')
+        ->get();   
+        return view('adminpages.productdetail', ['userName' => $user->name, 'userEmail' => $user->email],compact('user', 'products'));
+      }
+
+
+      public function store(Request $request)
+      {
+          $validator = Validator::make($request->all(), [
+              'image' => 'nullable|image',
+              'main_heading' => 'nullable',
+              'sub_heading' => 'nullable',
+              'paragraph' => 'nullable',
+              'slug' => 'nullable',
+          ]);
+      
+          if ($validator->fails()) {
+              return response()->json(['errors' => $validator->errors()], 422);
+          }
+      
+          $fileName = null;
+      
+          if ($request->hasFile('image')) {
+              $file = $request->file('image');
+              if ($file->isValid()) {
+                  $uniqueTimestamp = time();
+                  $fileName = $uniqueTimestamp . '-' . $file->getClientOriginalName();
+                  $file->move(public_path('images'), $fileName);
+              }
+          }
+      
+          $product = ProductDetail::create([
+              'image' => $fileName, 
+              'heading' => $request->heading,
+              'sub_heading' => $request->sub_heading,
+              'paragraph' => $request->paragraph,
+              'slug' => $request->slug,
+          ]);
+      
+          return response()->json([
+              'success' => true,
+              'message' => 'Product added successfully!',
+              'product' => $product
+          ], 200);
+      }
+      
+      
+      
+
+      public function show($id)
+      {
+          $product = ProductDetail::findOrFail($id);
+          return response()->json([
+              'success' => true,
+              'product' => $product
+          ]);
+      }
+
+      public function update(Request $request, $id)
+      {
+          $product = ProductDetail::findOrFail($id);   
+      
+          $validator = Validator::make($request->all(), [
+              'image' => 'nullable|image',
+              'heading' => 'nullable',
+              'sub_heading' => 'nullable',
+              'paragraph' => 'nullable',
+              'slug' => 'nullable',
+          ]);
+      
+          if ($validator->fails()) {
+              return response()->json(['errors' => $validator->errors()], 422);
+          }
+      
+          if ($request->hasFile('image')) {
+              $file = $request->file('image');
+              if ($file->isValid()) {
+                  $uniqueTimestamp = time();
+                  $fileName = $uniqueTimestamp . '-' . $file->getClientOriginalName();
+                  $file->move(public_path('images'), $fileName);
+                  $product->image = $fileName;
+              }
+          }
+      
+          $product->heading = $request->heading ?? $product->heading;
+          $product->sub_heading = $request->sub_heading ?? $product->sub_heading;
+          $product->paragraph = $request->paragraph ?? $product->paragraph;
+          $product->slug = $request->slug ?? $product->slug;
+      
+          $product->save();
+      
+          return response()->json([
+              'success' => true,
+              'message' => 'Product updated successfully!',
+              'product' => $product
+          ], 200);
+      }
+      
+      
+
+public function deleteproduct(Request $request)
+{
+    $product = ProductDetail::find($request->product_id);
+
+    if ($product) {
+        $product->delete();
+        return response()->json(['success' => true, 'message' => 'product deleted successfully']);
+    }
+
+    return response()->json(['success' => false, 'message' => 'product not found']);
+}
+
+public function detailsPage($links)
+{
+    $user = Auth::check() ? Auth::user() : null;
+
+    $project = Project::where('links', $links)->first();
+
+    if (!$project) {
+        return abort(404, 'Project not found');
+    }
+
+    $products = ProductDetail::where('slug', $project->links)->get();
+
+    if ($products->isEmpty()) {
+        return abort(404, 'No products found for this project');
+    }
+
+    return view('userpages.productdetails', compact('project', 'products','user'));
+}
+
+
+
+}

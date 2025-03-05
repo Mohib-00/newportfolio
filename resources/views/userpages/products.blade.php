@@ -5,6 +5,7 @@
             <div class="row row-first gy-4 d-none d-sm-flex ">
 
                 {{--laptop view--}}
+                @foreach($projects as $project)
                 <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
                     <div class="box-shadoww h-100 p-4 box-radius">
                         <div class="d-flex align-items-center">
@@ -16,19 +17,24 @@
                             </div>
                             <div class="w-100 text-end">
                                 <div class="d-flex flex-column align-items-end">
-                                    <a class="btn btn-primary mb-2 box-shadoww" href="https://moneypex.com/pk/accounting">Details</a>
-                                    <a class="btn btn-primary box-shadoww" href="https://taxfiler.moneypex.com/">Login</a>
+                                    <a href="{{ route('project.details', ['links' => $project->links]) }}" 
+                                        class="btn btn-primary mb-2 box-shadoww">
+                                        Details
+                                     </a>       
+                                     <a class="btn btn-primary box-shadoww" href="https://taxfiler.moneypex.com/">Login</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 
             </div>
            
            {{--mobile view--}}
             <div class="row row-second gy-4 d-sm-none">
 
+                @foreach($projects as $project)
                 <div class="col-sm-6">
                     <div class="box-shadoww h-100 p-4 box-radius">
                         <div class="d-flex align-items-center">
@@ -40,13 +46,17 @@
                             </div>
                             <div class="w-50 text-end">
                                 <div class="d-flex flex-column align-items-end">
-                                    <a class="btn btn-primary mb-2 box-shadoww" href="https://moneypex.com/pk/accounting">Details</a>
+                                    <a href="{{ route('project.details', ['links' => $project->links]) }}" 
+                                        class="btn btn-primary mb-2 box-shadoww">
+                                        Details
+                                     </a>
                                     <a class="btn btn-primary box-shadoww" href="https://taxfiler.moneypex.com/">Login</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
             </div>
         </div>
