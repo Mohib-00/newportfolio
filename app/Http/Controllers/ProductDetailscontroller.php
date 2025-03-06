@@ -11,6 +11,7 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class ProductDetailscontroller extends Controller
 {
@@ -128,11 +129,11 @@ public function deleteproduct(Request $request)
     return response()->json(['success' => false, 'message' => 'product not found']);
 }
 
-public function detailsPage($links)
+public function detailsPage($slug)
 {
     $user = Auth::check() ? Auth::user() : null;
 
-    $project = Project::where('links', $links)->first();
+    $project = Project::whereRaw("LOWER(REPLACE(name, ' ', '-')) = ?", [Str::lower($slug)])->first();
 
     if (!$project) {
         return abort(404, 'Project not found');
@@ -144,9 +145,7 @@ public function detailsPage($links)
         return abort(404, 'No products found for this project');
     }
 
-    return view('userpages.productdetails', compact('project', 'products','user'));
+    return view('userpages.productdetails', compact('project', 'products', 'user'));
 }
-
-
 
 }

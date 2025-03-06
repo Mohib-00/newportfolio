@@ -6,28 +6,30 @@
 
                 {{--laptop view--}}
                 @foreach($projects as $project)
-                <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
-                    <div class="box-shadoww h-100 p-4 box-radius">
-                        <div class="d-flex align-items-center">
-                            <img style="width:50px;height:50px" src="./index_files/accounting-op2.png" class="me-3" alt="accounting-icon">
-                            <div class="w-100">
-                                <h6 class="mt-0 fw-bold text-color">
-                                    Accounting
-                                </h6>
-                            </div>
-                            <div class="w-100 text-end">
-                                <div class="d-flex flex-column align-items-end">
-                                    <a href="{{ route('project.details', ['links' => $project->links]) }}" 
-                                        class="btn btn-primary mb-2 box-shadoww">
-                                        Details
-                                     </a>       
-                                     <a class="btn btn-primary box-shadoww" href="https://taxfiler.moneypex.com/">Login</a>
-                                </div>
-                            </div>
-                        </div>
+    <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
+        <div class="box-shadoww h-100 p-4 box-radius">
+            <div class="d-flex align-items-center">
+                <img style="width:50px;height:50px" src="{{ asset('images/' . $project->image) }}" class="me-3" alt="accounting-icon">
+                <div class="w-100">
+                    <h6 class="mt-0 fw-bold text-color">
+                        {{ $project->name }}
+                    </h6>
+                </div>
+                <div class="w-100 text-end">
+                    <div class="d-flex flex-column align-items-end">
+                        <a href="{{ route('project.details', ['slug' => Str::slug($project->name)]) }}" 
+                            class="btn btn-primary mb-2 box-shadoww">
+                            Details
+                        </a>       
+                        <a class="btn btn-primary box-shadoww" href="/">Login</a>
                     </div>
                 </div>
-                @endforeach
+            </div>
+        </div>
+    </div>
+@endforeach
+
+            
                 
             </div>
            
@@ -35,28 +37,29 @@
             <div class="row row-second gy-4 d-sm-none">
 
                 @foreach($projects as $project)
-                <div class="col-sm-6">
+                <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
                     <div class="box-shadoww h-100 p-4 box-radius">
                         <div class="d-flex align-items-center">
-                            <img style="width:50px;height:50px" src="./index_files/accounting-op2.png" class="me-4" alt="accounting-icon">
+                            <img style="width:50px;height:50px" src="{{ asset('images/' . $project->image) }}" class="me-3" alt="accounting-icon">
                             <div class="w-100">
-                                <h6 class="mt-0 fw-bold text-color me-4">
-                                    Accounting
+                                <h6 class="mt-0 fw-bold text-color">
+                                    {{ $project->name }}
                                 </h6>
                             </div>
-                            <div class="w-50 text-end">
+                            <div class="w-100 text-end">
                                 <div class="d-flex flex-column align-items-end">
-                                    <a href="{{ route('project.details', ['links' => $project->links]) }}" 
+                                    <a href="{{ route('project.details', ['slug' => Str::slug($project->name)]) }}" 
                                         class="btn btn-primary mb-2 box-shadoww">
                                         Details
-                                     </a>
-                                    <a class="btn btn-primary box-shadoww" href="https://taxfiler.moneypex.com/">Login</a>
+                                    </a>       
+                                    <a class="btn btn-primary box-shadoww" href="/">Login</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
+            
 
             </div>
         </div>

@@ -47,7 +47,8 @@ Route::get("select_app", [UserAuthcontroller::class, "selectapp"]);
 //to open contact page
 Route::get("contact_us", [UserAuthcontroller::class, "contact"]);
 //to open product detail
-Route::get('/project/{links}/details-page', [ProductDetailsController::class, 'detailsPage'])->name('project.details');
+Route::get('/product/{slug}/details', [ProductDetailsController::class, 'detailsPage'])
+    ->name('project.details');
 
 Route::group([
     "middleware" => ["auth:sanctum"]

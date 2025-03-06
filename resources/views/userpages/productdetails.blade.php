@@ -7,112 +7,73 @@
 
     @include('userpages.header')
 
-        
-<section class="hero-section-wrapper py-3 py-sm-5">
-    <div class="container-fluid container-md">
-        <div class="row ps-0 ps-sm-0 d-flex align-items-center pb-5">
-            <div class="col-sm-5 px-4 px-sm-0 ps-sm-3" style="overflow-x: hidden !important">
-                <h3 class="hero-section-col-one-heading">
-
-                    Powerful Bookkeeping Software to Support Your Business
-                </h3>
-                <p class="hero-section-col-one-text-a text-white">
-                    Join thousands of bookkeepers, who run their businesses with Moneypex efficiently.
-                </p>
-
-                <p class="d-flex flex-wrap mt-3 hero-section-features-list">
-                    <span class="text-white pe-md-4"><img class="check-icon" src="./detail_files/White tick.png" alt="White tick">Manage your accounts</span>
-
-                    <span class="text-white pe-md-4">
-                        <img class="check-icon" src="./detail_files/White tick.png" alt="White tick">Generate detailed reports
-                    </span>
-                    <span class="text-white pe-md-4">
-                        <img class="check-icon" src="./detail_files/White tick.png" alt="White tick">Track inventory and projects
-                    </span>
-                    <span class="text-white pe-md-4"><img class="check-icon" src="./detail_files/White tick.png" alt="White tick">Record transactions</span>
-                </p>
-                <div class="hero-section-rating text-white py-2 d-none d-sm-block">
-                    <div class="rating-inner-wrapper float-end">
-                        <div class="stars text-center pe-5">
-                            <img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star">
-                        </div>
-                        <p class="text-center pe-5 mt-1 trustpilot-text text-white">
-                            <img src="./detail_files/trustpilot star.png" alt="star"> Trustpilot <br>
-                            Excellent Reviews
+    <section class="hero-section-wrapper py-3 py-sm-5" style="background-color:#238bca">
+        <div class="container-fluid container-md">
+            <div class="row ps-0 ps-sm-0 d-flex align-items-center pb-5">
+                <div class="col-sm-5 px-4 px-sm-0 ps-sm-3" style="overflow-x: hidden !important">
+                    @foreach ($products as $product)
+                    @if (!empty($product->heading))
+                    <h2 class="hero-section-col-one-heading">
+                        {{ $product->heading }}
+                    </h2>
+                    @endif
+                    @endforeach
+                    @foreach ($products as $product)
+                    @if (!empty($product->paragraph))
+                    <p class="hero-section-col-one-text-a text-white">
+                        {{ $product->paragraph }}
+                    </p>
+                    @endif
+                    @endforeach
+                    
+                    
+                    @foreach ($products as $product)
+                    @if (!empty($product->sub_heading))
+                        <p class="d-flex flex-wrap mt-3 hero-section-features-list">
+                            <span class="text-white">
+                                <img class="check-icon" src="{{ asset('accounting_files/White tick.png') }}" alt="White tick">
+                                {{ $product->sub_heading }}
+                            </span>
                         </p>
-                    </div>
+                    @endif
+                    @endforeach
+                
+                    
                 </div>
-            </div>
-            <div class="col-sm-7 px-xxl-4 px-sm-0 feature hero-section-col-twoo">
-                <!-- <img
-                  class="hero-section-col-two-mobile position-absolute"
-                  src="/img/bookkeeping/hero-section-phone-mockup.png"alt=""
-                /> -->
-                <section class="feature-page-hero-section-form pb-1 px-xxl-5 pt-5 pt-sm-0">
-                    <div class="container-fluid container-md">
-                        <div class="row pt-sm-1 my-sm-5 mb-5 mb-sm-0 px-xl-5 mx-sm-0 mx-lg-5">
-                            <div class="pt-sm-5 pb-sm-5 mt-sm-0 pt-3">
-                                <div class="bg-white form-wrapper px-5 py-4">
-                                    <h5 class="theme-color text-center pb-3">Get Started</h5>
-                                    
-<form id="contact_form">
-    <input type="hidden" name="ReturnUrl" id="ReturnUrl" value="">
-    <input type="hidden" name="SignupId" id="SignupId" value="1">
-    <div class="">
-        <label for="Name" class="form-label">Name *</label>
-        <input type="text" class="form-control" id="FullName" placeholder="" name="FullName" autocomplete="off">
-        <h6 id="fullName"></h6>
-    </div>
-    <div class="">
-        <label for="Email" class="form-label">Email *</label>
-        <input type="email" class="form-control" id="Email" placeholder="" name="Email" autocomplete="off">
-        <h6 id="email"></h6>
-    </div>
-    <div class="">
-        <label for="Password" class="form-label">Password *</label>
-        <input type="password" class="form-control" id="Password" placeholder="" name="Password" autocomplete="off">
-        <h6 id="password"></h6>
-    </div>
-    <div class="mb-3 mt-3">
-        <div id="recapcha" class="g-recaptcha w-100" data-sitekey="6LfSF9UZAAAAAFuCCvNJEVr0UFaWIbKHlM5KZx5j" style="transform: scale(0.880795); transform-origin: 0px 0px;"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-e9dj0s7yizdg" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./detail_files/anchor.html"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./detail_files/saved_resource(1).html"></iframe></div>
-        <h6 id="recaptcha"></h6>
-    </div>
-    <div class="form-check mb-3">
-        <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="remember" id="IsActive">
-            I accept all the <a href="https://moneypex.com/privacy-policy" target="_blank">Terms and Conditions</a>
-        </label>
-        <h6 id="isActive"></h6>
-    </div>
+                <div class="col-sm-7 px-xxl-4 px-sm-0 feature hero-section-col-twoo">
+                    <section class="feature-page-hero-section-form pb-1 px-xxl-5 pt-5 pt-sm-0">
+                        <div class="container-fluid container-md">
+                            @foreach ($products as $product)
+                            @if (!empty($product->image))
+                            <img style="border:none" class="hero-section-col-two-laptop d-none d-md-block desktop-image" src="{{ asset('images/' . $product->image) }}" alt="hero-img-desktop-icon">
+                            <img style="border:none" class="hero-section-col-two-laptop d-md-none" src="{{ asset('images/' . $product->image) }}" alt="hero-img-iphone-icon">
+                            @endif
+                            @endforeach
+                            <style>
+                                @media (min-width: 991px) and (max-width: 1199px) {
+                                .desktop-image {
+                                  height: 400px;
+                                  width: 90%;
+                                  margin-top:20px
+                                 }
+                                }
+                                @media (min-width: 1200px) {
+                                .desktop-image {
+                                  height: 450px;
+                                  width: 80%;
+                                  margin-top:20px
+                                 }
+                                }
+                                
 
-    <button type="button" id="btnSubmit" class="btn btn-sm theme-btn-radius form-submit mt-3 mx-auto d-block">
-        Sign Up
-    </button>
-</form>
-
-
-
-                                </div>
-                            </div>
+                            </style>
                         </div>
-                    </div>
-                </section>
-
-                <div class="hero-section-rating text-white py-2 d-sm-none">
-                    <div class="rating-inner-wrapper float-end">
-                        <div class="stars text-center pe-5">
-                            <img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star"><img src="./detail_files/star.png" alt="star">
-                        </div>
-                        <p class="text-center pe-5 mt-1 trustpilot-text text-white">
-                            <img src="./detail_files/trustpilot star.png" alt="starwhite"> Trustpilot <br>
-                            Excellent Reviews
-                        </p>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
 <!-- ? Hero section end-->
 <!-- ? Feature cards section start-->
 <section class="feature-cards-wrapper d-flex justify-content-center">
@@ -132,7 +93,7 @@
 
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3">
-                    <img src="./detail_files/Detailed Recording icon.png" alt="Detailed Recording icon" class="d-block m-auto">
+                    <img src="{{asset('detail_files/Detailed Recording icon.png')}}" alt="Detailed Recording icon" class="d-block m-auto">
                     <h5 class="text-center pt-2 fw-bold">Detailed Recording</h5>
                     <p class="text-center">
                         Organize your documents like receipts, sales invoice attachments, contracts, and letters in one place.
@@ -142,7 +103,7 @@
 
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3">
-                    <img src="./detail_files/Easier Audits icon.png" alt="Easier Audits icon" class="d-block m-auto">
+                    <img src="{{asset('detail_files/Easier Audits icon.png')}}" alt="Easier Audits icon" class="d-block m-auto">
                     <h5 class="text-center pt-2 fw-bold">Easier Audits</h5>
                     <p class="text-center">
                         Record each expense and transaction of your business to have tight control of finances.
@@ -152,7 +113,7 @@
 
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3 px-xxl-4">
-                    <img src="./detail_files/Fast Financial Analysis icon.png" alt="Fast Financial Analysis icon" class="d-block m-auto">
+                    <img src="{{asset('detail_files/Fast Financial Analysis icon.png')}}" alt="Fast Financial Analysis icon" class="d-block m-auto">
                     <h5 class="text-center pt-2 fw-bold">Fast Financial Analysis</h5>
                     <p class="text-center">
                         Automated reports and analysis that keep you up to date with your business finances.
@@ -162,21 +123,10 @@
         </div>
     </div>
 
-    <!-- <div
-      class="hmrc-card d-flex bg-white"
-    >
-      <img class="hmrc-card-badge" src="/img/bookkeeping/NoPath.png"alt="" />
-      <div class="hmrc-card-content ps-md-5 d-flex align-items-center pt-3 pt-md-0">
-        <div><b>HMRC Approved Accounting Software</b>
-        <p class="pt-4">
-          Moneypex is an MTD-compatible best accounting software in the UK to file your VAT returns online. Customers can submit their HMRC Making Tax Digital compliant VAT returns online with a button. <br>Simple, Affordable, and Fast!
-        </p> </div>
-      </div>
-    </div> -->
 </section>
 <!-- ? Feature cards end-->
 <!-- ? Features section start-->
-<section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
+{{--<section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
     <div class="container">
         <div class="row px-xl-5">
             <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
@@ -449,7 +399,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>--}}
 
 
 

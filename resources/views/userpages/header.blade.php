@@ -25,13 +25,13 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light d-lg-none">
         <div class="container-fluid container-md d-flex">
             <a href="/">
-                <img class="header-logoo" src="./index_files/Mobile_moneypex.svg" alt="MP small icon" style="min-width:50%;height:30px;">
+                <img class="header-logoo" src="{{asset('index_files/Mobile_moneypex.svg')}}" alt="MP small icon" style="min-width:50%;height:30px;">
             </a>
             <div class="">
                 <a class="btn btn-primary text-white btn-sm theme-btn-radius theme-solid-btn nav-btn" href="/select_app">Get&nbsp;Started</a>
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <img src="./index_files/menu-icon.svg" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
-                    <img src="./index_files/close-icon.svg" id="menu-cross-icon" alt="Toggle Menu Icon" onclick="toogleIconClose()">
+                    <img src="{{asset('index_files/menu-icon.svg')}}" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
+                    <img src="{{asset('index_files/close-icon.svg')}}" id="menu-cross-icon" alt="Toggle Menu Icon" onclick="toogleIconClose()">
                 </button>
 
             </div>
@@ -88,11 +88,11 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white d-none d-lg-block py-3">
         <div class="container-fluid container-md mbl-header">
             <a class="navbar-brand" href="/">
-                <img src="./index_files/Desktop_Moneypex.png" alt="Moneypex Footer logo" class="align-text-top header-logo">
+                <img src="{{asset('index_files/Desktop_Moneypex.png')}}" alt="Moneypex Footer logo" class="align-text-top header-logo">
             </a>
             <button class="navbar-toggler border border-2 ms-3 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <img src="./index_files/menu-icon.svg" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
-                <img src="./index_files/close-icon.svg" id="menu-cross-icon" alt="Toggle Menu Icon" onclick="toogleIconClose()">
+                <img src="{{asset('index_files/menu-icon.svg')}}" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
+                <img src="{{asset('index_files/close-icon.svg')}}" id="menu-cross-icon" alt="Toggle Menu Icon" onclick="toogleIconClose()">
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="nav navbar-nav ps-3 pl-sm-0">
