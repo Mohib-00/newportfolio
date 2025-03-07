@@ -240,34 +240,41 @@
             <div class="row px-xl-5">
                 <div class="col-lg-7 px-4 px-lg-0 px-xl-4 ps-lg-5 order-2 pt-5 pt-lg-0">
                     <h2 class="theme-color fs-1 feature-section-sub-heading fw-bold">
-                        Expense Management
+                        @foreach ($section6s as $section6)
+                        @if (!empty($section6->heading))
+                        {{$section6->heading}}
+                        @endif
+                        @endforeach
                     </h2>
                     <p class="pe-lg-3 me-lg-3">
-                        Moneypex's <a class="text-decoration-none">expense management</a> feature can simplify your life by automating all the laborious procedures.
+                        @foreach ($section6s as $section6)
+                        @if (!empty($section6->paragraph))
+                        {{$section6->paragraph}}
+                        @endif
+                        @endforeach
                     </p>
+                    @foreach ($section6s as $section6)
                     <div class="d-flex py-3">
                         <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Automate Financial Bookkeeping icon.png')}}" alt="Automate Financial Bookkeeping icon">
                         <div class="ps-3">
-                            <b>Automate Financial Bookkeeping</b>
+                            <b>{{$section6->sub_heading}}</b>
                             <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
-                                Automatically generate and send quotes and invoices to get paid faster. Even track your sales, and other costs to organize receipts.
+                                {{$section6->sub_paragraph}}
                             </p>
                         </div>
                     </div>
-                    <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Ease in Tax Payment icon.png')}}" alt="Ease in Tax Payment icon">
-                        <div class="ps-3">
-                            <b>Ease in Tax Payment</b>
-                            <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
-                                Maintain a detailed list of expense categories to build accurate accounts which are invaluable at tax time.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
+                  
 
                 </div>
+                @foreach ($section6s as $section6)
+                @if (!empty($section6->image))
                 <div class="col-lg-5 ps-5 ps-lg-0 pe-lg-5 d-lg-flex align-items-center justify-content-center order-1">
-                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="{{asset('detail_files/Expense Management with Moneypex accounting.webp')}}" alt="Expense Management with Moneypex accounting">
+                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="{{ asset('images/' . $section6->image) }}" alt="Expense Management with Moneypex accounting">
                 </div>
+                @endif
+                @endforeach
+               
             </div>
         </div>
     </section>

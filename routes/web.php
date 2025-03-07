@@ -3,6 +3,7 @@ use App\Http\Controllers\AboutServiceController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\Detailpage6;
 use App\Http\Controllers\DetailProductInventoryManagement;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\MessageController;
@@ -79,6 +80,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-product-inventory-management", [DetailProductInventoryManagement::class, "inventorymanagement"]);
     Route::get("add-detail-page-section_4", [Section4DetailPage::class, "section4"]);
     Route::get("add-detail-page-section_5", [Section5DetailPage::class, "section5"]);
+    Route::get("add-detail-page-section_6", [Detailpage6::class, "detail6"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -166,3 +168,11 @@ Route::get('/section5/{id}', [Section5DetailPage::class, 'show'])->name('section
 Route::post('/section5/{id}', [Section5DetailPage::class, 'update'])->name('section5.update');
 //to delet section5
 Route::post('/delete-section5', [Section5DetailPage::class, 'deletesection5'])->name('delete.section5');
+//to add detail6 data
+Route::post('/detail6/store', [Detailpage6::class, 'store'])->name('detail6.store');
+//to get section5 data
+Route::get('/detail6/{id}', [Detailpage6::class, 'show'])->name('detail6.show');
+// Update section5 data
+Route::post('/detail6/{id}', [Detailpage6::class, 'update'])->name('detail6.update');
+//to delet section5
+Route::post('/delete-detail6', [Detailpage6::class, 'deletedetail6'])->name('delete.detail6');

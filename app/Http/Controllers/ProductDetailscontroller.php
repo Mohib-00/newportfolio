@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutService;
+use App\Models\Detail6;
 use App\Models\Detailpagesection4;
 use App\Models\DetailPagesection5;
 use App\Models\DetailProductInventory;
@@ -148,12 +149,12 @@ public function detailsPage($slug)
     $inventorys = DetailProductInventory::where('slug', $project->links)->get();
     $section4s = Detailpagesection4::where('slug', $project->links)->get();
     $section5s = DetailPagesection5::where('slug', $project->links)->get();
-
+    $section6s = Detail6::where('slug', $project->links)->get();
     if ($products->isEmpty()) {
         return abort(404, 'No products found for this project');
     }
 
-    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys','section4s','section5s'));
+    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys','section4s','section5s','section6s'));
 }
 
 }
