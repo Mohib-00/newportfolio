@@ -79,54 +79,26 @@
 <section class="feature-cards-wrapper d-flex justify-content-center">
     <div class="container">
         <div class="row px-sm-5 px-3">
-            <!-- <div
-              class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0"
-            >
-              <div class="feature-page-card py-3 px-3">
-                <img src="/img/bookkeeping/features - book keeping main 1.png"alt="" class="d-block m-auto" />
-                <h5 class="text-center pt-2">Detailed Recording</h5>
-                <p class="text-center">
-                  Organize your documents like receipts, sales invoice attachments, contracts, and letters in one place.
-                </p>
-              </div>
-            </div> -->
-
+            @foreach ($productshighlights as $productshighlight)
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3">
-                    <img src="{{asset('detail_files/Detailed Recording icon.png')}}" alt="Detailed Recording icon" class="d-block m-auto">
-                    <h5 class="text-center pt-2 fw-bold">Detailed Recording</h5>
+                    <img style="border-radius:50%" height=100 width=100 src="{{ asset('images/' . $productshighlight->image) }}" alt="Detailed Recording icon" class="d-block m-auto">
+                    <h5 class="text-center pt-2 fw-bold">{{$productshighlight->heading}}</h5>
                     <p class="text-center">
-                        Organize your documents like receipts, sales invoice attachments, contracts, and letters in one place.
+                        {{$productshighlight->paragraph}}
                     </p>
                 </div>
             </div>
+            @endforeach
 
-            <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
-                <div class="feature-page-card py-4 px-3">
-                    <img src="{{asset('detail_files/Easier Audits icon.png')}}" alt="Easier Audits icon" class="d-block m-auto">
-                    <h5 class="text-center pt-2 fw-bold">Easier Audits</h5>
-                    <p class="text-center">
-                        Record each expense and transaction of your business to have tight control of finances.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
-                <div class="feature-page-card py-4 px-3 px-xxl-4">
-                    <img src="{{asset('detail_files/Fast Financial Analysis icon.png')}}" alt="Fast Financial Analysis icon" class="d-block m-auto">
-                    <h5 class="text-center pt-2 fw-bold">Fast Financial Analysis</h5>
-                    <p class="text-center">
-                        Automated reports and analysis that keep you up to date with your business finances.
-                    </p>
-                </div>
-            </div>
+           
         </div>
     </div>
 
 </section>
 <!-- ? Feature cards end-->
 <!-- ? Features section start-->
-{{--<section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
+<section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
     <div class="container">
         <div class="row px-xl-5">
             <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
@@ -137,7 +109,7 @@
                     Never delay orders or lose track of stocks with our brilliant inventory management system.
                 </p>
                 <div class="d-flex py-3">
-                    <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Save Important Documents icon.png" alt="Save Important Documents icon">
+                    <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Save Important Documents icon.png')}}" alt="Save Important Documents icon">
                     <div class="ps-3">
                         <b>Save Important Documents</b>
                         <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
@@ -146,7 +118,7 @@
                     </div>
                 </div>
                 <div class="d-flex mt-4">
-                    <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Inventory Alerts icon.png" alt="Inventory Alerts icon">
+                    <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Inventory Alerts icon.png')}}" alt="Inventory Alerts icon">
                     <div class="ps-3">
                         <b>Track Inventory and Get Stock-out Alerts</b>
                         <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
@@ -158,12 +130,12 @@
 
             </div>
             <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="./detail_files/Hassle Free Inventory Management with moneypex.webp" alt="Hassle Free Inventory Management with moneypex">
+                <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{asset('detail_files/Hassle Free Inventory Management with moneypex.webp')}}" alt="Hassle Free Inventory Management with moneypex">
             </div>
         </div>
     </div>
 </section>
-<div class="light-gray-bg-wrap">
+{{--<div class="light-gray-bg-wrap">
     <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
         <div class="container pt-sm-5">
             <div class="row px-xl-5">

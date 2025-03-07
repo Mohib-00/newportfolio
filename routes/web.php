@@ -6,6 +6,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductDetailscontroller;
+use App\Http\Controllers\ProductDetailsHighlightcontroller;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SettingsController;
@@ -71,6 +72,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-highlight", [HighlightController::class, "highlight"]);
     Route::get("add-products", [ProjectsController::class, "addprojects"]);
     Route::get("add-product-details-banner", [ProductDetailscontroller::class, "addproductdetails"]);
+    Route::get("add-product-details-highlight", [ProductDetailsHighlightcontroller::class, "addproducthighlight"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -126,4 +128,11 @@ Route::get('/product/{id}', [ProductDetailscontroller::class, 'show'])->name('pr
 Route::post('/product/{id}', [ProductDetailscontroller::class, 'update'])->name('product.update');
 //to delet product
 Route::post('/delete-product', [ProductDetailscontroller::class, 'deleteproduct'])->name('delete.product');
-
+//to add productdetailhighlight data
+Route::post('/productdetailhighlight/store', [ProductDetailsHighlightcontroller::class, 'store'])->name('productdetailhighlight.store');
+//to get productdetailhighlight data
+Route::get('/productdetailhighlight/{id}', [ProductDetailsHighlightcontroller::class, 'show'])->name('productdetailhighlight.show');
+// Update productdetailhighlight data
+Route::post('/productdetailhighlight/{id}', [ProductDetailsHighlightcontroller::class, 'update'])->name('productdetailhighlight.update');
+//to delet productdetailhighlight
+Route::post('/delete-productdetailhighlight', [ProductDetailsHighlightcontroller::class, 'deletehighlight'])->name('delete.productdetailhighlight');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AboutService;
 use App\Models\Message;
 use App\Models\ProductDetail;
+use App\Models\ProductDetailsHighlight;
 use App\Models\Project;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -140,12 +141,13 @@ public function detailsPage($slug)
     }
 
     $products = ProductDetail::where('slug', $project->links)->get();
+    $productshighlights = ProductDetailsHighlight::where('slug', $project->links)->get();
 
     if ($products->isEmpty()) {
         return abort(404, 'No products found for this project');
     }
 
-    return view('userpages.productdetails', compact('project', 'products', 'user'));
+    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights'));
 }
 
 }

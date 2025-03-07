@@ -102,6 +102,11 @@
                     <span class="sub-item">Add Products Detail Banner</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-product-details-highlight">
+                    <span class="sub-item">Add Products Detail Highlight</span>
+                  </a>
+                </li>
                
               </ul>
             </div>

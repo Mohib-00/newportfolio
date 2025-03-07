@@ -1,53 +1,65 @@
-<section class="hero-section-wrapper pt-3 pb-5 pt-md-5 pb-md-5 mb-md-5 mb-lg-5 mb-xl-5 mb-xxl-5 mb-sm-0" style="background-color:#238bca">
+<section class="hero-section-wrapper py-3 py-sm-5" style="background-color:#238bca">
     <div class="container-fluid container-md">
-        <div class="row ps-2 ps-sm-0 d-flex align-items-center pb-5">
-            <div class="col-sm-6 ps-sm-3" style="overflow-x: hidden !important">
-                <h3 class="hero-section-col-one-heading">
-                    No#1 Accounting
-                    <span class="d-block">ERP Software in Pakistan</span>
-                </h3>
+        <div class="row ps-0 ps-sm-0 d-flex align-items-center pb-5">
+            <div class="col-sm-5 px-4 px-sm-0 ps-sm-3" style="overflow-x: hidden !important">
+                @foreach ($banners as $banner)
+                @if (!empty($banner->heading))
+                <h2 class="hero-section-col-one-heading">
+                    {{ $banner->heading }}
+                </h2>
+                @endif
+                @endforeach
+                @foreach ($banners as $banner)
+                @if (!empty($banner->paragraph))
                 <p class="hero-section-col-one-text-a text-white">
-                    Experience the new way to handle business with advanced AI-infused ERP solution.
+                    {{ $banner->paragraph }}
                 </p>
-                <p class="d-flex flex-wrap mt-3 hero-section-features-list">
-                    <span class="text-white pe-md-4">
-                        <img class="check-icon" src="./index_files/White tick.png" alt="White tick">Online Accounting Software
-                    </span>
-                    <span class="text-white pe-md-4">
-                        <img class="check-icon" src="./index_files/White tick.png" alt="White tick">Complete Finance Control
-                    </span>
-                    <span class="text-white">
-                        <img class="check-icon" src="./index_files/White tick.png" alt="White tick">Simple Accounting Solution
-                    </span>
-                </p>
-                <div class="hero-section-rating text-white py-2 d-none d-sm-block">
-                    <div class="rating-inner-wrapper float-end">
-                        <div class="stars text-center pe-5">
-                            <img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star">
-                        </div>
-                        <p class="text-center pe-5 mt-1 trustpilot-text text-white">
-                            <img src="./index_files/trustpilot star.png" alt="star"> Trustpilot <br>
-                            Excellent Reviews
-                        </p>
-                    </div>
-                </div>
+                @endif
+                @endforeach
+                
+                
+                @foreach ($banners as $banner)
+                @if (!empty($banner->sub_heading))
+                    <p class="d-flex flex-wrap mt-3 hero-section-features-list">
+                        <span class="text-white">
+                            <img class="check-icon" src="{{ asset('accounting_files/White tick.png') }}" alt="White tick">
+                            {{ $banner->sub_heading }}
+                        </span>
+                    </p>
+                @endif
+                @endforeach
+            
+                
             </div>
-            <div class="col-sm-6 hero-section-col-two">
-                <div>
-                    <img class="hero-section-col-two-laptop d-none d-md-block" src="./index_files/hero-img-desktop.webp" alt="hero-img-desktop-icon">
-                    <img class="hero-section-col-two-laptop d-md-none " src="./index_files/hero-image-iphone.webp" alt="hero-img-iphone-icon">
-                </div>
-                <div class="hero-section-rating text-white py-2 d-sm-none">
-                    <div class="rating-inner-wrapper float-end">
-                        <div class="stars text-center pe-5">
-                            <img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star"><img src="./index_files/star.png" alt="star">
-                        </div>
-                        <p class="text-center pe-5 mt-1 trustpilot-text text-white">
-                            <img src="./index_files/trustpilot star.png" alt="star"> Trustpilot <br>
-                            Excellent Reviews
-                        </p>
+            <div class="col-sm-7 px-xxl-4 px-sm-0 feature hero-section-col-twoo">
+                <section class="feature-page-hero-section-form pb-1 px-xxl-5 pt-5 pt-sm-0">
+                    <div class="container-fluid container-md">
+                        @foreach ($banners as $banner)
+                        @if (!empty($banner->image))
+                        <img style="border:none" class="hero-section-col-two-laptop d-none d-md-block desktop-image" src="{{ asset('images/' . $banner->image) }}" alt="hero-img-desktop-icon">
+                        <img style="border:none" class="hero-section-col-two-laptop d-md-none" src="{{ asset('images/' . $banner->image) }}" alt="hero-img-iphone-icon">
+                        @endif
+                        @endforeach
+                        <style>
+                            @media (min-width: 991px) and (max-width: 1199px) {
+                            .desktop-image {
+                              height: 400px;
+                              width: 90%;
+                              margin-top:20px
+                             }
+                            }
+                            @media (min-width: 1200px) {
+                            .desktop-image {
+                              height: 450px;
+                              width: 80%;
+                              margin-top:20px
+                             }
+                            }
+                            
+
+                        </style>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Highlight;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -176,8 +178,10 @@ public function logout() {
      
      public function home(){ 
          $user = Auth::user();   
-         $projects = Project::all();    
-         return view('userpages.home', compact('user','projects'));
+         $projects = Project::all();
+         $banners = Banner::all();  
+         $highlights = Highlight::all();  
+         return view('userpages.home', compact('user','projects','banners','highlights'));
      }
      public function account(){ 
         $user = Auth::user();         

@@ -294,56 +294,6 @@ $(document).ready(function() {
 });
     
 });
-
-
-
-//to open login page
-$(document).ready(function() {
-    $('.signIn').on('click', function() {
-        $.ajax({
-            url: '/login',
-            method: 'GET',
-            success: function(response) {
-                window.location.href = '/login';
-            },
-            error: function(xhr) {
-                alert('Error: ' + xhr.statusText);
-            }
-        });
-    });
-});
-
-//to open register page
-$(document).ready(function() {
-    $('.signUp').on('click', function() {
-        $.ajax({
-            url: '/register',
-            method: 'GET',
-            success: function(response) {
-                window.location.href = '/register';
-            },
-            error: function(xhr) {
-                alert('Error: ' + xhr.statusText);
-            }
-        });
-    });
-});
-
-//to open frontend user page
-$(document).ready(function() {
-    $('.userpage').on('click', function() {
-        $.ajax({
-            url: '/',
-            method: 'GET',
-            success: function(response) {
-                window.location.href = '/';
-            },
-            error: function(xhr) {
-                alert('Error: ' + xhr.statusText);
-            }
-        });
-    });
-});
  
  
 //to chnage password
