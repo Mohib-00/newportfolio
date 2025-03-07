@@ -10,6 +10,8 @@ use App\Http\Controllers\ProductDetailscontroller;
 use App\Http\Controllers\ProductDetailsHighlightcontroller;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Section4DetailPage;
+use App\Http\Controllers\Section5DetailPage;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserAuthcontroller;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +77,8 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-product-details-banner", [ProductDetailscontroller::class, "addproductdetails"]);
     Route::get("add-product-details-highlight", [ProductDetailsHighlightcontroller::class, "addproducthighlight"]);
     Route::get("add-product-inventory-management", [DetailProductInventoryManagement::class, "inventorymanagement"]);
+    Route::get("add-detail-page-section_4", [Section4DetailPage::class, "section4"]);
+    Route::get("add-detail-page-section_5", [Section5DetailPage::class, "section5"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -146,3 +150,19 @@ Route::get('/inventory/{id}', [DetailProductInventoryManagement::class, 'show'])
 Route::post('/inventory/{id}', [DetailProductInventoryManagement::class, 'update'])->name('inventory.update');
 //to delet inventory
 Route::post('/delete-inventory', [DetailProductInventoryManagement::class, 'deleteinventory'])->name('delete.inventory');
+//to add section4 data
+Route::post('/section4/store', [Section4DetailPage::class, 'store'])->name('section4.store');
+//to get section4 data
+Route::get('/section4/{id}', [Section4DetailPage::class, 'show'])->name('section4.show');
+// Update section4 data
+Route::post('/section4/{id}', [Section4DetailPage::class, 'update'])->name('section4.update');
+//to delet section4
+Route::post('/delete-section4', [Section4DetailPage::class, 'deletesection4'])->name('delete.section4');
+//to add section5 data
+Route::post('/section5/store', [Section5DetailPage::class, 'store'])->name('section5.store');
+//to get section5 data
+Route::get('/section5/{id}', [Section5DetailPage::class, 'show'])->name('section5.show');
+// Update section5 data
+Route::post('/section5/{id}', [Section5DetailPage::class, 'update'])->name('section5.update');
+//to delet section5
+Route::post('/delete-section5', [Section5DetailPage::class, 'deletesection5'])->name('delete.section5');

@@ -143,81 +143,97 @@
         </div>
     </div>
 </section>
-<div class="light-gray-bg-wrap">
+
+
+    @if ($section4s->isNotEmpty())
     <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
         <div class="container pt-sm-5">
             <div class="row px-xl-5">
                 <div class="col-lg-7 px-4 px-lg-0 px-xl-4 ps-lg-5 order-2 pt-5 pt-lg-0">
                     <h2 class="theme-color fs-1 feature-section-sub-heading fw-bold">
-                        Easy Bank Reconciliation
+                        @foreach ($section4s as $section4)
+                        @if (!empty($section4->heading))
+                        {{$section4->heading}}
+                        @endif
+                        @endforeach
                     </h2>
                     <p class="pe-lg-3 me-lg-3">
-                        Connect bank accounts to import and match transactions with your current account.
+                        @foreach ($section4s as $section4)
+                        @if (!empty($section4->paragraph))
+                        {{$section4->paragraph}}
+                        @endif
+                        @endforeach
                     </p>
-                    <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Sync Payments icon.png')}}" alt="Sync Payments icon">
-                        <div class="ps-3">
-                            <b>Sync Payments</b>
-                            <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
-                                Compare your bank statement with your bookkeeping records to track accurate cash flow.
-                            </p>
-                        </div>
+
+                    @foreach ($section4s as $section4)
+                <div class="d-flex py-3">
+                    <img style="border-radius:50%" class="features-inner-sectio-icon align-self-start" src="{{ asset('images/' . $section4->sub_image) }}" alt="Save Important Documents icon">
+                    <div class="ps-3">
+                        <b>{{$section4->sub_heading}}</b>
+                        <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
+                            {{$section4->sub_paragraph}}                        
+                        </p>
                     </div>
-                    <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Prevent Errors icon.png')}}" alt="Prevent Errors icon">
-                        <div class="ps-3">
-                            <b>Prevent Errors</b>
-                            <p class="pe-lg-3 me-lg-3 pt-2">
-                                Avoid fraudulent transactions, errors, missed payments, and double payments.
-                            </p>
-                        </div>
-                    </div>
+                </div>
+                @endforeach
 
                 </div>
-                <div class="col-lg-5 ps-5 ps-lg-0 pe-lg-5 d-lg-flex align-items-center justify-content-center order-1">
-                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="{{asset('detail_files/Easy Bank Reconciliation with moneypex.webp')}}" alt="Easy Bank Reconciliation with moneypex">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{--<section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
-        <div class="container">
-            <div class="row px-xl-5">
-                <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
-                    <h2 class="theme-color fs-1 feature-section-sub-heading fw-bold">
-                        Projects Management
-                    </h2>
-                    <p class="pe-lg-3 me-lg-3">
-                        Get cloud bookkeeping software to manage finances of multiple projects in one place.
-                    </p>
-                    <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Automate Workflows icon.png')}}" alt="Automate Workflows icon">
-                        <div class="ps-3">
-                            <b>Automate Workflows</b>
-                            <p class="pe-lg-3 me-lg-3 pt-2">
-                                Standardize common procedures, client data collecting, and detect bottlenecks.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Real-time Visibility icon.png')}}" alt="Real-time Visibility icon">
-                        <div class="ps-3">
-                            <b>Gain Real-time Visibility</b>
-                            <p class="pe-lg-3 me-lg-3 pt-2">
-                                Estimate cost, time, profit, and revenue to gain full visibility of projects.
-                            </p>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-sm theme-outline-btn theme-btn-radius nav-link features-section-outline-cta mt-sm-4 mx-2 d-inline-block ms-5 ms-sm-0 px-sm-4" href="https://moneypex.com/signup">Start Your Free Trial</a>
-                </div>
+                @foreach ($section4s as $section4)
+                @if (!empty($section4->image))
                 <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{asset('detail_files/Projects Management.webp')}}" alt="Projects Management">
+                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{ asset('images/' . $section4->image) }}" alt="Hassle Free Inventory Management with moneypex">
                 </div>
+                @endif
+                @endforeach
             </div>
         </div>
     </section>
+    @endif
+
+    @if ($section5s->isNotEmpty())
+    <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
+        <div class="container pt-sm-5">
+            <div class="row px-xl-5">
+                <div class="col-lg-7 px-4 px-lg-0 px-xl-4 ps-lg-5 order-2 pt-5 pt-lg-0">
+                    <h2 class="theme-color fs-1 feature-section-sub-heading fw-bold">
+                        @foreach ($section5s as $section5)
+                        @if (!empty($section5->heading))
+                        {{$section5->heading}}
+                        @endif
+                        @endforeach
+                    </h2>
+                    <p class="pe-lg-3 me-lg-3">
+                        @foreach ($section5s as $section5)
+                        @if (!empty($section5->paragraph))
+                        {{$section5->paragraph}}
+                        @endif
+                        @endforeach
+                    </p>
+
+                    @foreach ($section5s as $section5)
+                <div class="d-flex py-3">
+                    <img style="border-radius:50%" class="features-inner-sectio-icon align-self-start" src="{{ asset('images/' . $section5->sub_image) }}" alt="Save Important Documents icon">
+                    <div class="ps-3">
+                        <b>{{$section5->sub_heading}}</b>
+                        <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
+                            {{$section5->sub_paragraph}}                        
+                        </p>
+                    </div>
+                </div>
+                @endforeach
+
+                </div>
+                @foreach ($section5s as $section5)
+                @if (!empty($section5->image))
+                <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
+                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{ asset('images/' . $section5->image) }}" alt="Hassle Free Inventory Management with moneypex">
+                </div>
+                @endif
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
 
     <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
         <div class="container">
@@ -255,9 +271,9 @@
             </div>
         </div>
     </section>
-</div>
 
 
+{{--
 <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
     <div class="container">
         <div class="row px-xl-5">

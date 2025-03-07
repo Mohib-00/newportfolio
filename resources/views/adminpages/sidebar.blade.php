@@ -112,6 +112,16 @@
                     <span class="sub-item">Add Inventory Management</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-detail-page-section_4">
+                    <span class="sub-item">Add Section 4</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin/add-detail-page-section_5">
+                    <span class="sub-item">Add Section 5</span>
+                  </a>
+                </li>
                
               </ul>
             </div>
