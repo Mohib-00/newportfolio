@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutService;
+use App\Models\DetailProductInventory;
 use App\Models\Message;
 use App\Models\ProductDetail;
 use App\Models\ProductDetailsHighlight;
@@ -142,12 +143,13 @@ public function detailsPage($slug)
 
     $products = ProductDetail::where('slug', $project->links)->get();
     $productshighlights = ProductDetailsHighlight::where('slug', $project->links)->get();
+    $inventorys = DetailProductInventory::where('slug', $project->links)->get();
 
     if ($products->isEmpty()) {
         return abort(404, 'No products found for this project');
     }
 
-    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights'));
+    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys'));
 }
 
 }

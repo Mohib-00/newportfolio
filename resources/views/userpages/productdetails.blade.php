@@ -103,39 +103,47 @@
         <div class="row px-xl-5">
             <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
                 <h2 class="theme-color fs-1 feature-section-sub-heading fw-bold">
-                    Hassle Free Inventory Management
+                    @foreach ($inventorys as $inventory)
+                    @if (!empty($inventory->heading))
+                    {{$inventory->heading}}
+                    @endif
+                    @endforeach
+                    
                 </h2>
                 <p class="pe-lg-3 me-lg-3">
-                    Never delay orders or lose track of stocks with our brilliant inventory management system.
+                    @foreach ($inventorys as $inventory)
+                    @if (!empty($inventory->paragraph))
+                    {{$inventory->paragraph}}
+                    @endif
+                    @endforeach
                 </p>
+
+                @foreach ($inventorys as $inventory)
                 <div class="d-flex py-3">
-                    <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Save Important Documents icon.png')}}" alt="Save Important Documents icon">
+                    <img style="border-radius:50%" class="features-inner-sectio-icon align-self-start" src="{{ asset('images/' . $inventory->sub_image) }}" alt="Save Important Documents icon">
                     <div class="ps-3">
-                        <b>Save Important Documents</b>
+                        <b>{{$inventory->sub_heading}}</b>
                         <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
-                            Snap pictures of handwritten or printed receipts and upload alongside inventory records. Keep all your inventory in one place.
+                            {{$inventory->sub_paragraph}}                        
                         </p>
                     </div>
                 </div>
-                <div class="d-flex mt-4">
-                    <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Inventory Alerts icon.png')}}" alt="Inventory Alerts icon">
-                    <div class="ps-3">
-                        <b>Track Inventory and Get Stock-out Alerts</b>
-                        <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
-                            Keep record of inventory levels at all times and get regular low-stock alerts with advanced bookkeeping software.
+                @endforeach
 
-                        </p>
-                    </div>
-                </div>
+              
 
             </div>
+            @foreach ($inventorys as $inventory)
+            @if (!empty($inventory->image))
             <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{asset('detail_files/Hassle Free Inventory Management with moneypex.webp')}}" alt="Hassle Free Inventory Management with moneypex">
+                <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{ asset('images/' . $inventory->image) }}" alt="Hassle Free Inventory Management with moneypex">
             </div>
+            @endif
+            @endforeach
         </div>
     </div>
 </section>
-{{--<div class="light-gray-bg-wrap">
+<div class="light-gray-bg-wrap">
     <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
         <div class="container pt-sm-5">
             <div class="row px-xl-5">
@@ -147,7 +155,7 @@
                         Connect bank accounts to import and match transactions with your current account.
                     </p>
                     <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Sync Payments icon.png" alt="Sync Payments icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Sync Payments icon.png')}}" alt="Sync Payments icon">
                         <div class="ps-3">
                             <b>Sync Payments</b>
                             <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
@@ -156,7 +164,7 @@
                         </div>
                     </div>
                     <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Prevent Errors icon.png" alt="Prevent Errors icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Prevent Errors icon.png')}}" alt="Prevent Errors icon">
                         <div class="ps-3">
                             <b>Prevent Errors</b>
                             <p class="pe-lg-3 me-lg-3 pt-2">
@@ -167,13 +175,13 @@
 
                 </div>
                 <div class="col-lg-5 ps-5 ps-lg-0 pe-lg-5 d-lg-flex align-items-center justify-content-center order-1">
-                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="./detail_files/Easy Bank Reconciliation with moneypex.webp" alt="Easy Bank Reconciliation with moneypex">
+                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="{{asset('detail_files/Easy Bank Reconciliation with moneypex.webp')}}" alt="Easy Bank Reconciliation with moneypex">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
+    {{--<section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
         <div class="container">
             <div class="row px-xl-5">
                 <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
@@ -184,7 +192,7 @@
                         Get cloud bookkeeping software to manage finances of multiple projects in one place.
                     </p>
                     <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Automate Workflows icon.png" alt="Automate Workflows icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Automate Workflows icon.png')}}" alt="Automate Workflows icon">
                         <div class="ps-3">
                             <b>Automate Workflows</b>
                             <p class="pe-lg-3 me-lg-3 pt-2">
@@ -193,7 +201,7 @@
                         </div>
                     </div>
                     <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Real-time Visibility icon.png" alt="Real-time Visibility icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Real-time Visibility icon.png')}}" alt="Real-time Visibility icon">
                         <div class="ps-3">
                             <b>Gain Real-time Visibility</b>
                             <p class="pe-lg-3 me-lg-3 pt-2">
@@ -205,7 +213,7 @@
                     <a class="btn btn-sm theme-outline-btn theme-btn-radius nav-link features-section-outline-cta mt-sm-4 mx-2 d-inline-block ms-5 ms-sm-0 px-sm-4" href="https://moneypex.com/signup">Start Your Free Trial</a>
                 </div>
                 <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="./detail_files/Projects Management.webp" alt="Projects Management">
+                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{asset('detail_files/Projects Management.webp')}}" alt="Projects Management">
                 </div>
             </div>
         </div>
@@ -219,10 +227,10 @@
                         Expense Management
                     </h2>
                     <p class="pe-lg-3 me-lg-3">
-                        Moneypex's <a class="text-decoration-none" href="https://moneypex.com/pk/expense-management-software">expense management</a> feature can simplify your life by automating all the laborious procedures.
+                        Moneypex's <a class="text-decoration-none">expense management</a> feature can simplify your life by automating all the laborious procedures.
                     </p>
                     <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Automate Financial Bookkeeping icon.png" alt="Automate Financial Bookkeeping icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Automate Financial Bookkeeping icon.png')}}" alt="Automate Financial Bookkeeping icon">
                         <div class="ps-3">
                             <b>Automate Financial Bookkeeping</b>
                             <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
@@ -231,7 +239,7 @@
                         </div>
                     </div>
                     <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="./detail_files/Ease in Tax Payment icon.png" alt="Ease in Tax Payment icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Ease in Tax Payment icon.png')}}" alt="Ease in Tax Payment icon">
                         <div class="ps-3">
                             <b>Ease in Tax Payment</b>
                             <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
@@ -242,7 +250,7 @@
 
                 </div>
                 <div class="col-lg-5 ps-5 ps-lg-0 pe-lg-5 d-lg-flex align-items-center justify-content-center order-1">
-                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="./detail_files/Expense Management with Moneypex accounting.webp" alt="Expense Management with Moneypex accounting">
+                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="{{asset('detail_files/Expense Management with Moneypex accounting.webp')}}" alt="Expense Management with Moneypex accounting">
                 </div>
             </div>
         </div>

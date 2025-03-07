@@ -107,6 +107,11 @@
                     <span class="sub-item">Add Products Detail Highlight</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-product-inventory-management">
+                    <span class="sub-item">Add Inventory Management</span>
+                  </a>
+                </li>
                
               </ul>
             </div>

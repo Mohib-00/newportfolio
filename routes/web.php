@@ -3,6 +3,7 @@ use App\Http\Controllers\AboutServiceController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\DetailProductInventoryManagement;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductDetailscontroller;
@@ -73,6 +74,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-products", [ProjectsController::class, "addprojects"]);
     Route::get("add-product-details-banner", [ProductDetailscontroller::class, "addproductdetails"]);
     Route::get("add-product-details-highlight", [ProductDetailsHighlightcontroller::class, "addproducthighlight"]);
+    Route::get("add-product-inventory-management", [DetailProductInventoryManagement::class, "inventorymanagement"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -136,3 +138,11 @@ Route::get('/productdetailhighlight/{id}', [ProductDetailsHighlightcontroller::c
 Route::post('/productdetailhighlight/{id}', [ProductDetailsHighlightcontroller::class, 'update'])->name('productdetailhighlight.update');
 //to delet productdetailhighlight
 Route::post('/delete-productdetailhighlight', [ProductDetailsHighlightcontroller::class, 'deletehighlight'])->name('delete.productdetailhighlight');
+//to add inventory data
+Route::post('/inventory/store', [DetailProductInventoryManagement::class, 'store'])->name('inventory.store');
+//to get inventory data
+Route::get('/inventory/{id}', [DetailProductInventoryManagement::class, 'show'])->name('inventory.show');
+// Update inventory data
+Route::post('/inventory/{id}', [DetailProductInventoryManagement::class, 'update'])->name('inventory.update');
+//to delet inventory
+Route::post('/delete-inventory', [DetailProductInventoryManagement::class, 'deleteinventory'])->name('delete.inventory');
