@@ -44,7 +44,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item dropdown-color" href="/accounting">Accounting</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/installment-management-software">Installment Management</a></li>
+                            <li><a class="dropdown-item dropdown-color" href="/installment-management">Installment Management</a></li>
                             <li><a class="dropdown-item dropdown-color" href="/manufacturing">Manufacturing</a></li>
                             <li><a class="dropdown-item dropdown-color" href="/bookkeeping-software">Bookkeeping</a></li>
                             <li><a class="dropdown-item dropdown-color" href="/expense-management-software">Expense Management</a></li>
@@ -102,7 +102,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item py-md-2" href="/accounting" style="color:gray;">Accounting</a></li>
-                            <li><a class="dropdown-item py-md-2" href="installment-management-software" style="color:gray;">Installment Management</a></li>
+                            <li><a class="dropdown-item py-md-2" href="/installment-management-software" style="color:gray;">Installment Management</a></li>
                             <li><a class="dropdown-item py-md-2" href="/manufacturing" style="color:gray;">Manufacturing</a></li>
                             <li><a class="dropdown-item py-md-2" href="/bookkeeping-software" style="color:gray;">Bookkeeping</a></li>
                             <li><a class="dropdown-item py-md-2" href="/expense-management-software" style="color:gray;">Expense Management</a></li>

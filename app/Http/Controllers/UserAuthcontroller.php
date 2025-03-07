@@ -184,8 +184,9 @@ public function logout() {
          return view('userpages.home', compact('user','projects','banners','highlights'));
      }
      public function account(){ 
-        $user = Auth::user();         
-        return view('userpages.accounting', compact('user'));
+        $user = Auth::user();  
+        $highlights = Highlight::all();       
+        return view('userpages.accounting', compact('user','highlights'));
     }
  
      public function admin(){ 
