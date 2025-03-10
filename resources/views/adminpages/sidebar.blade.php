@@ -127,6 +127,11 @@
                     <span class="sub-item">Add Section 6</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-detail-page-section_7">
+                    <span class="sub-item">Add Section 7</span>
+                  </a>
+                </li>
                
               </ul>
             </div>

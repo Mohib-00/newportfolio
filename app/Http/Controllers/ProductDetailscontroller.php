@@ -11,6 +11,7 @@ use App\Models\Message;
 use App\Models\ProductDetail;
 use App\Models\ProductDetailsHighlight;
 use App\Models\Project;
+use App\Models\Section7detail;
 use App\Models\Setting;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -137,24 +138,22 @@ public function deleteproduct(Request $request)
 public function detailsPage($slug)
 {
     $user = Auth::check() ? Auth::user() : null;
-
     $project = Project::whereRaw("LOWER(REPLACE(name, ' ', '-')) = ?", [Str::lower($slug)])->first();
 
     if (!$project) {
         return abort(404, 'Project not found');
     }
-
     $products = ProductDetail::where('slug', $project->links)->get();
     $productshighlights = ProductDetailsHighlight::where('slug', $project->links)->get();
     $inventorys = DetailProductInventory::where('slug', $project->links)->get();
     $section4s = Detailpagesection4::where('slug', $project->links)->get();
     $section5s = DetailPagesection5::where('slug', $project->links)->get();
     $section6s = Detail6::where('slug', $project->links)->get();
+    $section7s = Section7detail::where('slug', $project->links)->get();
     if ($products->isEmpty()) {
         return abort(404, 'No products found for this project');
     }
-
-    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys','section4s','section5s','section6s'));
+    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys','section4s','section5s','section6s','section7s'));
 }
 
 }
