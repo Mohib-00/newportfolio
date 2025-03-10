@@ -235,6 +235,7 @@
     </section>
     @endif
 
+    @if ($section6s->isNotEmpty())
     <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
         <div class="container">
             <div class="row px-xl-5">
@@ -255,11 +256,11 @@
                     </p>
                     @foreach ($section6s as $section6)
                     <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="{{asset('detail_files/Automate Financial Bookkeeping icon.png')}}" alt="Automate Financial Bookkeeping icon">
+                        <img style="border-radius:50%" class="features-inner-sectio-icon align-self-start" src="{{ asset('images/' . $section6->sub_image) }}" alt="Save Important Documents icon">
                         <div class="ps-3">
                             <b>{{$section6->sub_heading}}</b>
-                            <p class="pe-0 me-0 pe-lg-3 me-lg-3 pt-2">
-                                {{$section6->sub_paragraph}}
+                            <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
+                                {{$section6->sub_paragraph}}                        
                             </p>
                         </div>
                     </div>
@@ -278,9 +279,10 @@
             </div>
         </div>
     </section>
+    @endif
 
 
-{{--
+
 <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
     <div class="container">
         <div class="row px-xl-5">
@@ -317,7 +319,7 @@
         </div>
     </div>
 </section>
-
+{{--
 <!-- ? Explore more features end-->
 <!-- ? FAQs section start-->
 <section class="faqs-section pt-5">
