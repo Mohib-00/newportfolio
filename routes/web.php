@@ -8,6 +8,7 @@ use App\Http\Controllers\DetailProductInventoryManagement;
 use App\Http\Controllers\Detailssection7Controller;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\FeaturesController;
+use App\Http\Controllers\FeaturesdetailsController;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductDetailscontroller;
@@ -57,6 +58,9 @@ Route::get("contact_us", [UserAuthcontroller::class, "contact"]);
 //to open product detail
 Route::get('/product/{slug}/details', [ProductDetailsController::class, 'detailsPage'])
     ->name('project.details');
+//to open feature detail
+Route::get('/feature/{slug}/details', [FeaturesdetailsController::class, 'detailsfeature'])
+->name('feature.details');
 
 Route::group([
     "middleware" => ["auth:sanctum"]
