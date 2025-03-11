@@ -143,6 +143,24 @@
           </li>
 
           <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#maps">
+              <i class="icon-drawer"></i>
+              <p>Features</p>
+              <span class="caret"></span>
+            </a>
+            <div class="collapse" id="maps">
+              <ul class="nav nav-collapse">
+                <li>
+                  <a href="/admin/add-features">
+                    <span class="sub-item">Add Features</span>
+                  </a>
+                </li>
+              
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
             <a href="/admin/add-Working_Group_Participation">
               <i class="icon-people"></i>
               <p>Group Member</p>
