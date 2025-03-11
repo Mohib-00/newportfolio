@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounting Software - Do Smart Business | Moneypex UK</title>
+    <link rel="icon" type="image/x-icon" href="/img/icon.png">
+    <meta name="description" content="Best accounting software in UK to monitor business finances from anywhere, anytime for bookkeepers, accountants. Start managing today with moneypex accounting" />
+    
+    <!--------------------Open Graph Start-------------------->
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moneypex.com/404">
+    <meta property="og:title" content="Accounting Software - Do Smart Business | Moneypex UK">
+    <meta property="og:description" content="Best accounting software in UK to monitor business finances from anywhere, anytime for bookkeepers, accountants. Start managing today with moneypex accounting">
+    <meta property="og:image" content="https://moneypex.com/img/icon.png">
+    <!--------------------Open Graph End---------------------->
+    <!------------Twitter Card Start------------->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@moneypex">
+    <meta name="twitter:title" content="Accounting Software - Do Smart Business | Moneypex UK">
+    <meta name="twitter:description" content="Best accounting software in UK to monitor business finances from anywhere, anytime for bookkeepers, accountants. Start managing today with moneypex accounting">
+    <!------------Twitter Card End------------->
+    <!-------------Canonical & Alternate Start------->
+    <link rel="canonical" href="https://moneypex.com/404" />
+    <link rel="alternate" hreflang="en-gb" href="https://moneypex.com/404" />
+    <link rel="alternate" href="https://moneypex.com/404" hreflang="x-default">
+    <!-------------Canonical & Alternate End------->
+    <link rel="stylesheet" href="/css/app.css?v=RTliPAl20Ug8hhcF_RQlzWn46a4" />
+</head>
+<body>
+    <div class="modal fade" id="cookieConsentModal" tabindex="-1" role="dialog" aria-labelledby="cookieConsentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg my-0" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cookieConsentModalLabel">Pick your cookie preferences</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">                  
+                    </button>
+                </div>
+                <div class="modal-body pb-0">
+                    <p style="font-size:14px;">
+                        Some cookies are required for the functionality of our website and cannot be disabled. However, we need your permission to use optional cookies. You can change your cookie settings using the 'Manage Cookies' link. To learn more, visit our Cookies Policy.
+                    </p>
+                    <div class="form-group mb-0">
+                        <input type="checkbox" required disabled checked name="essential"> <b>Essential</b>
+                        <p style="font-size:14px;">
+                            These cookies are required for the website to function properly. They protect your data.
+                        </p>
+                    </div>
+                    <div class="form-group mb-0">
+                        <input type="checkbox" id="functionalCookie" unchecked name="functional"> <b>Functional</b>
+                        <p style="font-size:14px;">
+                            These cookies enable us to personalize your experience by remembering your preferences, region or country, language, and accessibility settings.
+                        </p>
+                    </div>
+                    <div class="form-group mb-0">
+                        <input type="checkbox" id="performanceCookie" unchecked name="performance"> <b>Performance Enhancements</b>
+                        <p style="font-size:14px;">
+                            These cookies inform us of how visitors utilize our website. This data helps us optimize our content and personalize your experience.
+                        </p>
+                    </div>
+                    <div class="form-group mb-0">
+                        <input type="checkbox" id="advertisingCookie" unchecked name="advertising"> <b>Advertising</b>
+                        <p style="font-size:14px;">
+                            These cookies allow us to provide you with relevant communications and advertisements within our products and on third-party websites.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-hover theme-btn-bg" onclick="saveCookieConsentSettings()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="shadow sticky-index sticky-top">
+        <!--? TopHeader start -->
+        <div id="topHeader" class="text-center bg-top-header p-2 theme-color">
+            <a class="text-decoration-underline heading-color" href="/signup">Try Moneypex For Free</a>
+        </div>
+        <!--? TopHeader end -->
+        <!-- ? Separate Mobile Navbar start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light d-lg-none">
+            <div class="container-fluid container-md d-flex">
+                <!-- <img class="header-logo" src="https://beta.arkitservices.co.uk/Moneypex/img/Group 670.png" alt="">   -->
+                <a href="/"><img class="header-logoo" src="/img/common/Mobile_moneypex.svg" alt="MP small icon" style="min-width:50%;height:30px;"></a>
+
+                <div class="">
+
+                    <a class="btn btn-primary text-white btn-sm theme-btn-radius theme-solid-btn nav-btn"
+                       href="/select-app">Get&nbsp;Started</a>
+
+                    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <img src="/img/common/menu-icon.svg" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
+                        <img src="/img/common/close-icon.svg" id="menu-cross-icon" alt="Toggle Menu Icon" onclick="toogleIconClose()">
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Features
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item dropdown-color" href="/accounting">Accounting</a></li>
+                                <li><a class="dropdown-item dropdown-color" href="/installment-management-software">Installment Management</a></li>
+                                <li><a class="dropdown-item dropdown-color" href="/manufacturing">Manufacturing</a></li>
+                                <li><a class="dropdown-item dropdown-color" href="/bookkeeping-software">Bookkeeping</a></li>
+                                <li><a class="dropdown-item dropdown-color" href="/expense-management-software">Expense Management</a></li>
+                                <li><a class="dropdown-item dropdown-color" href="/financial-reporting-software">Financial Reporting</a></li>
+                                <!-- <li><hr class="dropdown-divider"></li> -->
+                                <li><a class="dropdown-item dropdown-color" href="/invoicing-software">Invoicing</a></li>
+                                <li><a class="dropdown-item dropdown-color" href="/ocr-software">Smart Scanning</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/making-tax-digital">MTD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pricing-plan">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://support.moneypex.com/">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/select-login">
+                                <img class="login d-none d-lg-block" src="/img/common/profile icon.png" alt="profile icon" /> Log in
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- ? Separate Mobile Navbar end -->
+        <!-- ? Navbar start -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white d-none d-lg-block py-3">
+            <div class="container-fluid container-md mbl-header">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/common/Desktop_Moneypex.png"
+                         alt="Moneypex Footer logo"
+                         class="align-text-top header-logo" />
+                </a>
+                <button class="navbar-toggler border border-2 ms-3 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <img src="/img/common/menu-icon.svg" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
+                    <img src="/img/common/close-icon.svg" id="menu-cross-icon" alt="Toggle Menu Icon" onclick="toogleIconClose()">
+                </button>
+                <div class="collapse navbar-collapse justify-content-end"
+                     id="collapsibleNavbar">
+                    <ul class="nav navbar-nav ps-3 pl-sm-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Features
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item py-md-2" href="/accounting" style="color:gray;">Accounting</a></li>
+                                <li><a class="dropdown-item py-md-2" href="/installment-management-software" style="color:gray;">Installment Management</a></li>
+                                <li><a class="dropdown-item py-md-2" href="/manufacturing" style="color:gray;">Manufacturing</a></li>
+                                <li><a class="dropdown-item py-md-2" href="/bookkeeping-software" style="color:gray;">Bookkeeping</a></li>
+                                <li><a class="dropdown-item py-md-2" href="/expense-management-software" style="color:gray;">Expense Management</a></li>
+                                <li><a class="dropdown-item py-md-2" href="/financial-reporting-software" style="color:gray;">Financial Reporting</a></li>
+                                <!-- <li><hr class="dropdown-divider"></li> -->
+                                <li><a class="dropdown-item py-md-2" href="/invoicing-software" style="color:gray;">Invoicing</a></li>
+                                <li><a class="dropdown-item py-md-2" href="/ocr-software" style="color:gray;">Smart Scanning</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item pe-md-3">
+                            <a class="nav-link text-secondary" href="/making-tax-digital">MTD</a>
+                        </li>
+                        <li class="nav-item pe-md-3">
+                            <a class="nav-link text-secondary" href="/pricing-plan">Pricing</a>
+                        </li>
+                        <li class="nav-item pe-md-3">
+                            <a class="nav-link text-secondary" target="_blank" href="https://support.moneypex.com/">Support</a>
+                        </li>
+                        <li class="nav-item pe-md-3">
+                            <a class="nav-link text-secondary" href="/blog">Blogs</a>
+                        </li>
+                        <li class="nav-item pe-md-3">
+                            <a class="nav-link text-secondary" href="/select-login">
+                                Login   <span class="d-sm-none">Log in</span>
+                            </a>
+                        </li>
+                        <li class="nav-item pe-md-3">
+                            <a class="btn btn-primary nav-link text-white btn-sm theme-btn-radius theme-solid-btn nav-btn px-4 d-none d-sm-block"
+                               href="/select-app">Get Started</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <div>
+        
+<!-- ? Form section start-->
+<section class="form-section-wrapperr pb-1 px-lg-5 pt-5 pt-md-0">
+    <div class="container">
+        <div class="row pt-md-4 pb-md-5 my-md-5 mb-5 mb-md-0 px-lg-5 mx-lg-5">
+            <div class="col-md-6 pt-md-5 mt-5 ps-5">
+                <h2 class="theme-color fs-1 ">
+                    Ooops!
+                </h2>
+                <p>It seems you have reached a URL that doesn't exist.</p>
+                <a class="btn btn-primary nav-link text-white btn-sm theme-btn-radius theme-solid-btn nav-btn pe-2 d-inline-block mt-md-0 mt-1"
+                   href="/" style="width:10rem;">Go&nbsp;To&nbsp;Homepage&nbsp;</a>
+            </div>
+
+
+            <div class="col-md-6 px-5 mt-md-5" style="background-image:url('/img/Group 954.png');background-size:contain;background-repeat:no-repeat; padding-top:9rem !important; padding-bottom:9rem !important;background-position:center;">
+                <!--<img  src="https://beta.arkitservices.co.uk/Moneypex/img/Group 954.png" alt="Moneypex Footer logo" />-->
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row px-sm-5 px-md-0 px-lg-0 mx-sm-5 mx-md-0 mx-lg-0 px-4 py-5">
+                <div class="col-md-6 col-lg-3">
+                    <a href="/"><img class="footer-logo" src="/img/common/Mobile_moneypex.svg" alt="Moneypex Footer logo" /></a>
+                    <p class="fs-6 pt-4">
+                        Moneypex accounting software’s dynamic features help small
+                        businesses manage their finances, bookkeeping, and customers at a
+                        glance.
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="ms-sm-4 fw-bold">
+                        Quick Links    <!--<a class="       btn d-sm-none ms-4" data-bs-toggle="collapse" href="#quickLinksFooter" role="button" aria-expanded="false" aria-controls="quickLinksFooter"> -->
+
+                        <nav class="d-inline navbar navbar-expand-md bg-white navbar-light d-md-none bg-transparent">
+                            <button class="navbar-toggler border border-2 ms-3 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#quickLinksFooter">
+                                <span class="navbar-toggler-icon navbar-dark d-none"></span>
+                                <img src="/img/common/dropdown small.png" alt="dropdown small">
+                            </button>
+
+                        </nav>
+                        <!-- </a> -->
+                    </h5>
+                    <ul class="pt-4 d-md-block collapse" id="quickLinksFooter">
+                        <li><a href="/" class="text-decoration-none theme-color">Home</a></li>
+                        <li><a href="/pricing-plan" class="text-decoration-none theme-color"> Pricing Plan</a></li>
+                        <li><a href="/privacy-policy" class="text-decoration-none theme-color"> Privacy Policy</a></li>
+                        <li><a href="/contact-us" class="text-decoration-none theme-color"> Contact Us</a></li>
+                        <li><a href="https://support.moneypex.com/accounting/" class="text-decoration-none theme-color"> Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 pt-4 pt-sm-0 pt-md-4 pt-lg-0">
+                    <h5 class=" ms-sm-4 fw-bold">
+                        Products
+                        <nav class="d-inline navbar navbar-expand-md bg-white navbar-light d-md-none bg-transparent">
+                            <button class="navbar-toggler border border-2 ms-3 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#productsFooter">
+                                <span class="navbar-toggler-icon navbar-dark d-none"></span>
+                                <img src="/img/common/dropdown small.png" alt="dropdown small">
+                            </button>
+                        </nav>
+
+                    </h5>
+                    <ul class="pt-4 collapse d-md-block" id="productsFooter">
+                        <li><a href="/pos" class="text-decoration-none theme-color">POS</a></li>
+                        <li><a href="/practice-manager" class="text-decoration-none theme-color">Practice Manager</a></li>
+                        <li><a href="/rental" class="text-decoration-none theme-color">Rental Manager</a></li>
+
+                        <!--<li>ERP</li>-->
+                        <!--<li>CRM</li>-->
+                        <!--<li>Rental Management</li>-->
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 follow-us pt-4 pt-sm-0 pt-md-4 pt-lg-0">
+                    <h5 class="ms-sm-4 ms-md-0 ms-lg-4 fw-bold">Follow Us</h5>
+                    <div class="pt-4 ps-5 ps-sm-0 pb-3 pb-md-0">
+                        <a href="https://www.facebook.com/moneypex"> <img src="/img/common/facebook icon.png" alt="facebook icon" /></a>
+                        <a href="https://twitter.com/moneypex"> <img src="/img/common/Twitter icon.png" alt="Twitter icon" /></a>
+                        <a href="https://www.instagram.com/moneypex/"> <img src="/img/common/Instagram icon.png" alt="Instagram icon" /></a>
+                        <a href="https://www.linkedin.com/showcase/moneypex"> <img src="/img/common/Linkedin icon.png" alt="Linkedin icon" /></a>
+                        <a href="https://www.youtube.com/@moneypex9593"> <img src="/img/common/Youtube icon.png" alt="Youtube icon" /></a>
+                    </div>
+                    <p class="fs-6 mt-3 lh-sm"><b class="fw-bold">Email:</b> info@moneypex.com</p>
+                    <p class="fs-6 lh-sm"><b class="fw-bold">Phone:</b> 0&nbsp;121&nbsp;798&nbsp;5696</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed-bottom " style="height: 100%; background: rgba(0, 0, 0, 0.5); display: none;">
+        <div class="d-flex h-100 w-100">
+            <div class="toast toast-bottom-left position-fixed " style="opacity: 1; margin: auto; flex-basis: unset; max-width: unset; background: white; width: 96% !important;" role="alert" data-bs-autohide="true">
+                <div class="toast-header">
+                    <img src="..." class="rounded me-2" alt="..." hidden>
+                    <strong class="me-auto"></strong>
+                    <button id="BtnAccept" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body  d-flex flex-column">
+                    <h5 class="text-black">Your privacy</h5>
+                    <p class="text-black" style="font-size:14px;">
+                        This website needs certain data to function and stay secure. We need your permission to collect statistics on site usage. This helps us enhance our services and customize our marketing. To continue, click "Accept cookies," or visit "Cookie settings" to modify your cookie preferences. You can always change your selected option by clicking on "Manage Cookies."
+                    </p>
+                    <div class="pt-2 border-top">
+                        <div style="float:right">
+                            <button type="button" class="btn btn-primary btn-sm mt-2 theme-btn-bg " onclick="showCookieConsentModal()">Manage Cookies</button>
+                            <button type="button" class="btn btn-secondary btn-sm mt-2 theme-btn-bg" id="btnAccept">Accept Cookies</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------Scripts Start-------------------->
+    <script src="/js/app.js?v=EreeYdubjoVNkIWjPWsQG1Y3Q6Q"></script>
+    <!------------------Tracking Scripts Start----------------------->
+    <!--------------Scripts Start-------------------->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-0FFY5N1T01"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-0FFY5N1T01');
+    //Event snippet for Website traffic conversion page(for pk ad account)
+    gtag('event', 'conversion', { 'send_to': 'AW-10869910423/wdHkCIu4sa4YEJfXlr8o' });
+    //gtag('config', 'ua-141893463-1');
+    //gtag('config', 'aw-668114055');
+    //gtag('config', 'aw-10869910423');
+    //event snippet for page view moneypex.com/pk conversion page(for uk ad account)
+    //gtag('event', 'conversion', { 'send_to': 'aw-668114055/ngpycn757eabeie5yr4c' });
+</script>
+<!-- Meta Pixel Code -->
+
+
+
+<!-- End Meta Pixel Code -->
+<!--------------PK pixel code 1183842152187778 Start-------------------->
+<!-- End PK Pixel Code 1183842152187778 End -->
+<!-- Meta Pixel Code -->
+<!-- End Meta Pixel Code -->
+
+    <!------------------Tracking Scripts End----------------------->
+    <!------------------Schema Scripts Start----------------------->
+    
+    <!------------------Schema Scripts End----------------------->
+    
+    
+    <!--------------Scripts End-------------------->
+    
+</body>
+</html>
+
