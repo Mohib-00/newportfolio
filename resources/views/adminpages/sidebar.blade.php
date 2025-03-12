@@ -155,6 +155,11 @@
                     <span class="sub-item">Add Features</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-feature-banner">
+                    <span class="sub-item">Add Banner</span>
+                  </a>
+                </li>
               
               </ul>
             </div>

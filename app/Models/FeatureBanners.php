@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class FeatureBanners extends Model
 {
+    protected $table = 'feature_banners';
     protected $fillable = [
-        'heading', 
-        'sub_heading', 
-        'paragraph', 
-        'image', 
-        'detail_heading', 
-        'detail_paragraph', 
+        'image',
+        'heading',
+        'paragraph',
+        'sub_image',
+        'sub_heading',
+        'sub_paragraph',
         'slug',
     ];
 }

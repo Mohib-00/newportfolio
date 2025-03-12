@@ -14,9 +14,12 @@
                         <p class="card-text">
                             {{$feature->paragraph}}
                         </p>
-                        <a href="{{ route('feature.details', ['slug' => Str::slug($feature->heading)]) }}" class="text-color text-decoration-none">
-                            Learn More &gt;
-                        </a>
+                        <a href="{{ route('feature.details', ['slug' => Str::slug($feature->heading)]) }}" 
+                            class="text-color text-decoration-none">
+                             Learn More &gt;
+                         </a>
+                         
+                        
                         </div>
                 </div>
             </div>

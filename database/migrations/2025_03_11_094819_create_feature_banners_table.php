@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('feature_banners', function (Blueprint $table) {
             $table->id();
-            $table->string('heading')->nullable();
-            $table->string('sub_heading')->nullable();
-            $table->text('paragraph')->nullable();
             $table->string('image')->nullable();
-            $table->string('detail_heading')->nullable();
-            $table->text('detail_paragraph')->nullable();
-            $table->string('slug')->nullable();  
+            $table->string('heading')->nullable();
+            $table->string('paragraph')->nullable();
+            $table->string('sub_heading')->nullable();
+            $table->string('sub_image')->nullable();
+            $table->string('sub_paragraph')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

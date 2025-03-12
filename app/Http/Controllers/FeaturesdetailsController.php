@@ -12,22 +12,20 @@ class FeaturesdetailsController extends Controller
     public function detailsfeature($slug)
     {
         $user = Auth::check() ? Auth::user() : null;
-        
-        $feature = Feature::whereRaw("LOWER(REPLACE(heading, ' ', '-')) = ?", [strtolower($slug)])->first();
     
-        if (!$feature) {
+        $features = Feature::whereRaw("LOWER(REPLACE(heading, ' ', '-')) = ?", [strtolower($slug)])->get();
+    
+        if ($features->isEmpty()) {
             return abort(404, 'Feature not found');
         }
     
-        $featurebanners = FeatureBanners::where('slug', $feature->heading)->get();
+        $featurebanners = FeatureBanners::whereIn('slug', $features->pluck('links'))->get();
     
         if ($featurebanners->isEmpty()) {
             return abort(404, 'No banners found for this feature');
         }
     
-        return view('userpages.featuredetails', compact('feature', 'featurebanners'));
+        return view('userpages.featuredetails', compact('features', 'featurebanners'));
     }
     
-    
-
 }

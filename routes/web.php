@@ -7,6 +7,7 @@ use App\Http\Controllers\Detailpage6;
 use App\Http\Controllers\DetailProductInventoryManagement;
 use App\Http\Controllers\Detailssection7Controller;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\FeaturebannerController;
 use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\FeaturesdetailsController;
 use App\Http\Controllers\HighlightController;
@@ -60,7 +61,8 @@ Route::get('/product/{slug}/details', [ProductDetailsController::class, 'details
     ->name('project.details');
 //to open feature detail
 Route::get('/feature/{slug}/details', [FeaturesdetailsController::class, 'detailsfeature'])
-->name('feature.details');
+    ->name('feature.details');
+
 
 Route::group([
     "middleware" => ["auth:sanctum"]
@@ -91,6 +93,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-detail-page-section_7", [Detailssection7Controller::class, "detail7"]);
     Route::get("add-detail-page-faqs", [FaqsController::class, "faqs"]);
     Route::get("add-features", [FeaturesController::class, "feature"]);
+    Route::get("add-feature-banner", [FeaturebannerController::class, "featurebanner"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -210,3 +213,11 @@ Route::get('/feature/{id}', [FeaturesController::class, 'show'])->name('feature.
 Route::post('/feature/{id}', [FeaturesController::class, 'update'])->name('feature.update');
 //to delet feature
 Route::post('/delete-feature', [FeaturesController::class, 'deletefeature'])->name('delete.feature');
+//to add featurebanner data
+Route::post('/featurebanner/store', [FeaturebannerController::class, 'store'])->name('featurebanner.store');
+//to get section5 data
+Route::get('/featurebanner/{id}', [FeaturebannerController::class, 'show'])->name('featurebanner.show');
+// Update section5 data
+Route::post('/featurebanner/{id}', [FeaturebannerController::class, 'update'])->name('featurebanner.update');
+//to delet section5
+Route::post('/delete-featurebanner', [FeaturebannerController::class, 'deletefeaturebanner'])->name('delete.featurebanner');
