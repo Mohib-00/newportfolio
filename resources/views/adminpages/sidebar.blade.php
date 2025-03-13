@@ -160,6 +160,16 @@
                     <span class="sub-item">Add Banner</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-feature-highlights">
+                    <span class="sub-item">Add Highligts</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin/add-feature-section_3">
+                    <span class="sub-item">Add Section 3</span>
+                  </a>
+                </li>
               
               </ul>
             </div>

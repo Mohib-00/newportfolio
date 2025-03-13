@@ -8,8 +8,10 @@ use App\Http\Controllers\DetailProductInventoryManagement;
 use App\Http\Controllers\Detailssection7Controller;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\FeaturebannerController;
+use App\Http\Controllers\FeatureHighlightController;
 use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\FeaturesdetailsController;
+use App\Http\Controllers\FeatureSection3Controller;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductDetailscontroller;
@@ -95,6 +97,8 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-features", [FeaturesController::class, "feature"]);
     Route::get("add-feature-banner", [FeaturebannerController::class, "featurebanner"]);
     Route::get("add-settings", [SettingsController::class, "websitesettings"]);
+    Route::get("add-feature-highlights", [FeatureHighlightController::class, "featurehighlight"]);
+    Route::get("add-feature-section_3", [FeatureSection3Controller::class, "featuresection3"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -228,3 +232,19 @@ Route::post('/setting/store', [SettingsController::class, 'store'])->name('setti
 Route::get('/get-setting/{id}', [SettingsController::class, 'show'])->name('settings.show');
 // Update setting data
 Route::post('/update-setting/{id}', [SettingsController::class, 'update'])->name('settings.update');
+//to add featurehighlight data
+Route::post('/featurehighlight/store', [FeatureHighlightController::class, 'storefeaturehighlight'])->name('featurehighlight.store');
+//to get featurehighlight data
+Route::get('/featurehighlight/{id}', [FeatureHighlightController::class, 'showfeaturehighlight'])->name('featurehighlight.show');
+// Update featurehighlight data
+Route::post('/featurehighlight/{id}', [FeatureHighlightController::class, 'updatefeaturehighlight'])->name('featurehighlight.update');
+//to delet featurehighlight
+Route::post('/delete-featurehighlight', [FeatureHighlightController::class, 'deletefeaturehighlight'])->name('delete.featurehighlight');
+//to add Featuresection3 data
+Route::post('/featuresection3/store', [FeatureSection3Controller::class, 'store'])->name('featuresection3.store');
+//to get Featuresection3 data
+Route::get('/featuresection3/{id}', [FeatureSection3Controller::class, 'show'])->name('featuresection3.show');
+// Update Featuresection3 data
+Route::post('/featuresection3/{id}', [FeatureSection3Controller::class, 'update'])->name('featuresection3.update');
+//to delet Featuresection3
+Route::post('/delete-featuresection3', [FeatureSection3Controller::class, 'deletefeaturesection3'])->name('delete.Featuresection3');
