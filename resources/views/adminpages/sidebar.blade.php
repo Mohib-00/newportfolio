@@ -170,6 +170,11 @@
                     <span class="sub-item">Add Section 3</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-feature-section_4">
+                    <span class="sub-item">Add Section 4</span>
+                  </a>
+                </li>
               
               </ul>
             </div>

@@ -12,6 +12,7 @@ use App\Http\Controllers\FeatureHighlightController;
 use App\Http\Controllers\FeaturesController;
 use App\Http\Controllers\FeaturesdetailsController;
 use App\Http\Controllers\FeatureSection3Controller;
+use App\Http\Controllers\Featuresection5Controller;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductDetailscontroller;
@@ -99,6 +100,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-settings", [SettingsController::class, "websitesettings"]);
     Route::get("add-feature-highlights", [FeatureHighlightController::class, "featurehighlight"]);
     Route::get("add-feature-section_3", [FeatureSection3Controller::class, "featuresection3"]);
+    Route::get("add-feature-section_4", [Featuresection5Controller::class, "featuresection5"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -248,3 +250,11 @@ Route::get('/featuresection3/{id}', [FeatureSection3Controller::class, 'show'])-
 Route::post('/featuresection3/{id}', [FeatureSection3Controller::class, 'update'])->name('featuresection3.update');
 //to delet Featuresection3
 Route::post('/delete-featuresection3', [FeatureSection3Controller::class, 'deletefeaturesection3'])->name('delete.Featuresection3');
+//to add Featuresection5 data
+Route::post('/featuresection5/store', [FeatureSection5Controller::class, 'store'])->name('featuresection5.store');
+//to get featuresection5 data
+Route::get('/featuresection5/{id}', [FeatureSection5Controller::class, 'show'])->name('featuresection5.show');
+// Update featuresection5 data
+Route::post('/featuresection5/{id}', [FeatureSection5Controller::class, 'update'])->name('featuresection5.update');
+//to delet featuresection5
+Route::post('/delete-featuresection5', [FeatureSection5Controller::class, 'deletefeaturesection5'])->name('delete.Featuresection5');

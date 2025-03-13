@@ -133,27 +133,27 @@
     </div>
 </section>
 
-@if ($section5s->isNotEmpty())
+@if ($featuresection5s->isNotEmpty())
 <section class="light-bg-feature-section px-lg-5 mt-lg-5 pt-5">
     <div class="container pt-sm-5">
         <div class="row px-xl-5">
             <div class="col-lg-7 px-4 px-lg-0 px-xl-4 ps-lg-5 order-2 pt-5 pt-lg-0">
                 <h2 class="theme-color fs-1 feature-section-sub-heading fw-bold">
-                    @foreach ($section5s as $section5)
+                    @foreach ($featuresection5s as $section5)
                     @if (!empty($section5->heading))
                     {{$section5->heading}}
                     @endif
                     @endforeach
                 </h2>
                 <p class="pe-lg-3 me-lg-3">
-                    @foreach ($section5s as $section5)
+                    @foreach ($featuresection5s as $section5)
                     @if (!empty($section5->paragraph))
                     {{$section5->paragraph}}
                     @endif
                     @endforeach
                 </p>
 
-                @foreach ($section5s as $section5)
+                @foreach ($featuresection5s as $section5)
             <div class="d-flex py-3">
                 <img style="border-radius:50%" class="features-inner-sectio-icon align-self-start" src="{{ asset('images/' . $section5->sub_image) }}" alt="Save Important Documents icon">
                 <div class="ps-3">
@@ -166,7 +166,7 @@
             @endforeach
 
             </div>
-            @foreach ($section5s as $section5)
+            @foreach ($featuresection5s as $section5)
             @if (!empty($section5->image))
             <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
                 <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{ asset('images/' . $section5->image) }}" alt="Hassle Free Inventory Management with moneypex">
