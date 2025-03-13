@@ -94,6 +94,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-detail-page-faqs", [FaqsController::class, "faqs"]);
     Route::get("add-features", [FeaturesController::class, "feature"]);
     Route::get("add-feature-banner", [FeaturebannerController::class, "featurebanner"]);
+    Route::get("add-settings", [SettingsController::class, "websitesettings"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -221,3 +222,9 @@ Route::get('/featurebanner/{id}', [FeaturebannerController::class, 'show'])->nam
 Route::post('/featurebanner/{id}', [FeaturebannerController::class, 'update'])->name('featurebanner.update');
 //to delet section5
 Route::post('/delete-featurebanner', [FeaturebannerController::class, 'deletefeaturebanner'])->name('delete.featurebanner');
+//to add setting data
+Route::post('/setting/store', [SettingsController::class, 'store'])->name('settings.store');
+//to get setting data
+Route::get('/get-setting/{id}', [SettingsController::class, 'show'])->name('settings.show');
+// Update setting data
+Route::post('/update-setting/{id}', [SettingsController::class, 'update'])->name('settings.update');
