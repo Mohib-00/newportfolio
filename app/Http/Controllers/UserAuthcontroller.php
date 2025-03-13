@@ -187,8 +187,9 @@ public function logout() {
      }
      public function account(){ 
         $user = Auth::user();  
-        $highlights = Highlight::all();       
-        return view('userpages.accounting', compact('user','highlights'));
+        $highlights = Highlight::all(); 
+        $features = Feature::all();      
+        return view('userpages.accounting', compact('user','highlights','features'));
     }
  
      public function admin(){ 

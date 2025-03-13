@@ -7,15 +7,7 @@
  <link rel="icon" href="{{asset('Investor Group on Climate Change_files/logix.png')}}">
 
 <link rel="stylesheet" href="{{asset('index_files/app.css')}}">
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-bf24a88e.js.download')}}"></script>
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-71978bb6.js.download')}}"></script>
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-2d0b383d.js.download')}}"></script>
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-48f3b594.js.download')}}"></script>
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-4fe9d5dd.js.download')}}"></script>
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-2d0b9454.js.download')}}"></script>
-<script charset="utf-8" src="{{asset('index_files/twk-chunk-24d8db78.js.download')}}"></script>
-<script src="{{asset('index_files/emojione.min.js.download" type="text/javascript')}}" async="" defer=""></script>
-<script src="{{asset('index_files/emojione.min.js.download" type="text/javascript')}}" async="" defer=""></script>
+
 <style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#y5jjrtavhllo1740730813673.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#y5jjrtavhllo1740730813673.closed{animation: tawkMaxClose .25s ease!important}</style>
 <style>
     .card-img-top {

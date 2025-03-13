@@ -30,7 +30,7 @@
                     @if (!empty($banner->sub_heading))
                         <p class="d-flex flex-wrap mt-3 hero-section-features-list">
                             <span class="text-white">
-                                <img class="check-icon" src="{{ asset('accounting_files/White tick.png') }}" alt="White tick">
+                                <img class="check-icon" src="{{ asset('index_files/White tick.png') }}" alt="White tick">
                                 {{ $banner->sub_heading }}
                             </span>
                         </p>

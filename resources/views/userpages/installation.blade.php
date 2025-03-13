@@ -18,44 +18,15 @@
                     Moneypex cloud accounting software designed to help manage your finances anytime, anywhere with ease. Simplify your business with best accounting software in Pakistan.
                 </p>
                 <p class="d-flex flex-wrap mt-3 hero-section-features-list">
-                    <span class="text-white pe-md-4"><img class="check-icon" src="./accounting_files/White tick.png" alt="White tick">Online Accounting Software &amp; ERP</span>
+                    <span class="text-white pe-md-4"><img class="check-icon"src="./index_files/White tick.png" alt="White tick">Online Accounting Software &amp; ERP</span>
                     <span class="text-white">
-                        <img class="check-icon" src="./accounting_files/White tick.png" alt="White tick">Easy to Use
+                        <img class="check-icon" src="./index_files/White tick.png" alt="White tick">Easy to Use
                     </span>
-                    <span class="text-white pe-md-4"><img class="check-icon" src="./accounting_files/White tick.png" alt="White tick">Cloud Accounting Software</span>
+                    <span class="text-white pe-md-4"><img class="check-icon"src="./index_files/White tick.png" alt="White tick">Cloud Accounting Software</span>
                 </p>
-                <div class="hero-section-rating text-white py-2 d-none d-sm-block">
-                    <div class="rating-inner-wrapper float-end">
-                        <div class="stars text-center pe-5">
-                            <img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star">
-                        </div>
-                        <p class="text-center pe-5 mt-1 trustpilot-text text-white">
-                            <img src="./accounting_files/trustpilot star.png" alt="trustpilot star"> Trustpilot <br>
-                            Excellent Reviews
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-7 px-xxl-4 px-sm-0 feature hero-section-col-twoo">
                
-                <section class="feature-page-hero-section-form pb-1 px-xxl-5 pt-5 pt-sm-0">
-                    <div class="container-fluid container-md">
-                        <img class="hero-section-col-two-laptop d-none d-md-block" src="./index_files/hero-img-desktop.webp" alt="hero-img-desktop-icon">
-                        <img class="hero-section-col-two-laptop d-md-none " src="./index_files/hero-image-iphone.webp" alt="hero-img-iphone-icon">
-                    </div>
-                </section>
-                <div class="hero-section-rating text-white py-2 d-sm-none">
-                    <div class="rating-inner-wrapper float-end">
-                        <div class="stars text-center pe-5">
-                            <img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star"><img src="./accounting_files/star.png" alt="star">
-                        </div>
-                        <p class="text-center pe-5 mt-1 trustpilot-text text-white">
-                            <img src="./accounting_files/trustpilot star.png" alt="trustpilot star"> Trustpilot <br>
-                            Excellent Reviews
-                        </p>
-                    </div>
-                </div>
             </div>
+            
         </div>
     </div>
 </section>
@@ -64,7 +35,7 @@
         <div class="row px-sm-5 px-3">
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3">
-                    <img src="./Installation_files/installment-customization.png" alt="Manage Cashflow icon" class="d-block m-auto">
+                    <img style="border-radius:50%" height=100 width=100 src="./index_files/dummyy.png" alt="Manage Cashflow icon" class="d-block m-auto">
                     <h5 class="text-center pt-2 fw-bold">
                         Fully Customizable
                     </h5>
@@ -75,7 +46,7 @@
             </div>
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3">
-                    <img src="./Installation_files/installment-easy-to-use.png" alt="Tax-Ready icon" class="d-block m-auto">
+                    <img style="border-radius:50%" height=100 width=100  src="./index_files/dummyy.png" alt="Tax-Ready icon" class="d-block m-auto">
                     <h5 class="text-center pt-2 fw-bold">Easy To Use</h5>
                     <p class="text-center">
                         Get things done in a snap! Moneypex’s user-friendly design ensures smooth and simple experience for everyone.
@@ -84,7 +55,7 @@
             </div>
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
                 <div class="feature-page-card py-4 px-3 px-xxl-4">
-                    <img src="./Installation_files/installment-fast-and-secure.png" alt="Fast Financial Analysis icon" class="d-block m-auto">
+                    <img style="border-radius:50%"  height=100 width=100  src="./index_files/dummyy.png" alt="Fast Financial Analysis icon" class="d-block m-auto">
                     <h5 class="text-center pt-2 fw-bold">
                         Fast &amp; Secure
                     </h5>
@@ -107,7 +78,7 @@
                     Every payment plan is linked to the client, showing when it's due, how much is settled, and the remaining installments.
                 </p>
                 <div class="d-flex py-3">
-                    <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Set-Installments-on-Invoices.png" alt="Automate Invoicing icon">
+                    <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Automate Invoicing icon">
                     <div class="ps-3">
                         <b>Set Installments on Invoices </b>
                         <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
@@ -116,7 +87,7 @@
                     </div>
                 </div>
                 <div class="d-flex mt-4">
-                    <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Track-Payment-Status.png" alt="Follow-up Payments icon">
+                    <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Follow-up Payments icon">
                     <div class="ps-3">
                         <b>
                             Track Payment Status
@@ -128,7 +99,7 @@
                 </div>            
             </div>
             <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="./Installation_files/Set-Up-Installments-in-a-Snap.png" alt="Manage Bills _ Expenses">
+                <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="./index_files/dummyy.png" alt="Manage Bills _ Expenses">
             </div>
         </div>
     </div>
@@ -145,7 +116,7 @@
                         Moneypex installment business management system is fully customizable! It lets you adjust payment plans, amounts, or due dates as per your clients’ needs.
                     </p>
                     <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Modify-To-Suit-Your-Clients.png" alt="Advanced User icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Advanced User icon">
                         <div class="ps-3">
                             <b>
                                 Modify To Suit Your Clients
@@ -156,7 +127,7 @@
                         </div>
                     </div>
                     <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Flexible-Installment-Periods.png" alt="Manage Projects icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Manage Projects icon">
                         <div class="ps-3">
                             <b>
                                 Flexible Installment Periods
@@ -168,7 +139,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 ps-5 ps-lg-0 pe-lg-5 d-lg-flex align-items-center justify-content-center order-1">
-                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="./Installation_files/Plan-Your-Payments-Your-Way.png" alt="Multiple Users and Projects">
+                    <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="./index_files/dummyy.png" alt="Multiple Users and Projects">
                 </div>
             </div>
         </div>
@@ -184,7 +155,7 @@
                         Want payments straight to your bank? We got you!  Simply integrate Moneypex with your bank for seamless transactions, and make everything secure and fast.
                     </p>
                     <div class="d-flex py-3">
-                        <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Easy-Bank-Integration.png" alt="Double Check icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Double Check icon">
                         <div class="ps-3">
                             <b>
                                 Easy Bank Integration
@@ -195,7 +166,7 @@
                         </div>
                     </div>
                     <div class="d-flex mt-4">
-                        <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Fast-Secure-Payments.png" alt="Errorless Payments icon">
+                        <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Errorless Payments icon">
                         <div class="ps-3">
                             <b>
                                 Fast &amp; Secure Payments
@@ -207,7 +178,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="./Installation_files/Direct-to-Bank-Direct-to-You.png" alt="Easy Reconciliation">
+                    <img class="features-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="./index_files/dummyy.png" alt="Easy Reconciliation">
                 </div>
             </div>
         </div>
@@ -224,7 +195,7 @@
                     Attract customers and increase sales by offering flexible installment payment plans. You can also generate sales reports to gauge employee sales performance.
                 </p>
                 <div class="d-flex py-3">
-                    <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/More-Convenience-More-Sales.png" alt="Profit _ Loss Statements icon">
+                    <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="Profit _ Loss Statements icon">
                     <div class="ps-3">
                         <b>
                             More Convenience, More Sales
@@ -235,7 +206,7 @@
                     </div>
                 </div>
                 <div class="d-flex mt-4">
-                    <img class="features-inner-sectio-icon align-self-start" src="./Installation_files/Track-Every-Sale-Effortlessly.png" alt="VAT Returns icon">
+                    <img class="features-inner-sectio-icon align-self-start" src="./index_files/dummyy.png" alt="VAT Returns icon">
                     <div class="ps-3">
                         <b>
                             Track Every Sale Effortlessly
@@ -247,7 +218,7 @@
                 </div>
             </div>
             <div class="col-lg-5 ps-5 ps-lg-0 pe-lg-5 d-lg-flex align-items-center justify-content-center order-1">
-                <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="./Installation_files/Sell-More-with-Easy-Payments.png" alt="Clear Financial Statements">
+                <img class="features-section-tab-one-col-one-image ps-lg-3 pe-lg-4" src="./index_files/dummyy.png" alt="Clear Financial Statements">
             </div>
         </div>
     </div>
