@@ -4,7 +4,7 @@
 <meta content="" name="keywords">
 <meta content="" name="description">
  <!-- Favicon  -->
- <link rel="icon" href="{{asset('Investor Group on Climate Change_files/logix.png')}}">
+ <link rel="icon" href="{{ asset('images/' . $settings->logo) }}">
 
 <link rel="stylesheet" href="{{asset('index_files/app.css')}}">
 

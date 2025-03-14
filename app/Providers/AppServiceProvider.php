@@ -29,8 +29,10 @@ class AppServiceProvider extends ServiceProvider
             'email' => '',
             'address' => '',
             'phone' => '',
-            'about_paragraph' => '',
-            'image_1' => '',
+            'paragraph' => '',
+            'logo' => '',
+            'facebook_link' => '',
+            'twitter_link' => '',
         ]);
     
         view()->share([

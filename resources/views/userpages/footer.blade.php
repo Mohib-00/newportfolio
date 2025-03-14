@@ -46,14 +46,11 @@
             <div class="col-md-6 col-lg-3 follow-us pt-4 pt-sm-0 pt-md-4 pt-lg-0">
                 <h5 class="ms-sm-4 ms-md-0 ms-lg-4 fw-bold">Follow Us</h5>
                 <div class="pt-4 ps-5 ps-sm-0 pb-3 pb-md-0">
-                    <a href="/"> <img src="{{asset('index_files/facebook icon.png')}}" alt="facebook icon"></a>
-                    <a href="/"> <img src="{{asset('index_files/Twitter icon.png')}}" alt="Twitter icon"></a>
-                    <a href="/"> <img src="{{asset('index_files/Instagram icon.png')}}" alt="Instagram icon"></a>
-                    <a href="/"> <img src="{{asset('index_files/Linkedin icon.png')}}" alt="Linkedin icon"></a>
-                    <a href="/"><img src="{{asset('index_files/Youtube icon.png')}}" alt="Youtube icon"></a>
+                    <a href="{{$settings->facebook_link}}"> <img src="{{asset('index_files/facebook icon.png')}}" alt="facebook icon"></a>
+                    <a href="{{$settings->twitter_link}}"> <img src="{{asset('index_files/Instagram icon.png')}}" alt="Instagram icon"></a>
                 </div>
-                <p class="fs-6 mt-3 lh-sm"><b class="fw-bold">Email:</b> info@moneypex.com</p>
-                <p class="fs-6 lh-sm"><b class="fw-bold">Phone:</b> (051) 8446152</p>
+                <p class="fs-6 mt-3 lh-sm"><b class="fw-bold">Email:</b>{{$settings->email}}</p>
+                <p class="fs-6 lh-sm"><b class="fw-bold">Phone:</b>{{$settings->phone}}</p>
             </div>
         </div>
     </div>

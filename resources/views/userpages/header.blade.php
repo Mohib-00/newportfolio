@@ -18,14 +18,14 @@
  </style>
  
 
-    <div id="topHeader" class="text-center background-color p-2 ">
+    {{--<div id="topHeader" class="text-center background-color p-2 ">
         <a class="text-decoration-none text-white" href="/register">Try For Free</a>
-    </div>
+    </div>--}}
      <!-- ? mobile Navbar start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light d-lg-none">
         <div class="container-fluid container-md d-flex">
             <a href="/">
-                <img class="header-logoo" src="{{asset('index_files/Mobile_moneypex.svg')}}" alt="MP small icon" style="min-width:50%;height:30px;">
+                <img class="header-logoo" src="{{ asset('images/' . $settings->logo) }}" alt="MP small icon" style="min-width:60%;height:60px;">
             </a>
             <div class="">
                 <a class="btn btn-primary text-white btn-sm theme-btn-radius theme-solid-btn nav-btn" href="/select_app">Get&nbsp;Started</a>
@@ -53,9 +53,7 @@
                             <li><a class="dropdown-item dropdown-color" href="/OCR-software">Smart Scanning</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="/">Support</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="/our_blog">Blogs</a>
                     </li>
@@ -88,7 +86,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white d-none d-lg-block py-3">
         <div class="container-fluid container-md mbl-header">
             <a class="navbar-brand" href="/">
-                <img src="{{asset('index_files/Desktop_Moneypex.png')}}" alt="Moneypex Footer logo" class="align-text-top header-logo">
+                <img src="{{ asset('images/' . $settings->logo) }}" alt="Moneypex Footer logo" class="align-text-top header-logo" style="min-width:60%;height:70px;">
             </a>
             <button class="navbar-toggler border border-2 ms-3 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <img src="{{asset('index_files/menu-icon.svg')}}" id="toogle-menu-icon" alt="Toggle Menu Icon" onclick="toogleIconOpen()">
@@ -111,9 +109,7 @@
                             <li><a class="dropdown-item py-md-2" href="/OCR-software" style="color:gray;">Smart Scanning</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item pe-md-3">
-                        <a class="nav-link text-secondary" target="_blank" href="/">Support</a>
-                    </li>
+                    
                     <li class="nav-item pe-md-3">
                         <a class="nav-link text-secondary" href="/our_blog">Blogs</a>
                     </li>

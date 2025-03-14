@@ -57,11 +57,11 @@
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <b>Pakistan Address</b>
-                                    <p>First Floor, Luxus Mall, Office # 134, 154, Gulberg Greens Block B Islamabad, 44000, Pakistan</p>
+                                    <p>{{$settings->address}}</p>
                                     <b>Email</b>
-                                    <p>info@moneypex.com</p>
+                                    <p>{{$settings->email}}</p>
                                     <b>Phone</b>
-                                    <p>(051) 8446152 &nbsp;&nbsp;&nbsp;&nbsp; +92 315 8557551</p>
+                                    <p>{{$settings->phone}}</p>
                                 
                                     <b>Location Map</b>
                                     <div style="position: relative; width: 100%; height: 12.5rem;">
