@@ -14,6 +14,7 @@ use App\Http\Controllers\FeaturesdetailsController;
 use App\Http\Controllers\FeatureSection3Controller;
 use App\Http\Controllers\Featuresection5Controller;
 use App\Http\Controllers\HighlightController;
+use App\Http\Controllers\MainFaqsController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductDetailscontroller;
 use App\Http\Controllers\ProductDetailsHighlightcontroller;
@@ -101,6 +102,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-feature-highlights", [FeatureHighlightController::class, "featurehighlight"]);
     Route::get("add-feature-section_3", [FeatureSection3Controller::class, "featuresection3"]);
     Route::get("add-feature-section_4", [Featuresection5Controller::class, "featuresection5"]);
+    Route::get("add-faqs", [MainFaqsController::class, "mainfaqs"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -258,3 +260,11 @@ Route::get('/featuresection5/{id}', [FeatureSection5Controller::class, 'show'])-
 Route::post('/featuresection5/{id}', [FeatureSection5Controller::class, 'update'])->name('featuresection5.update');
 //to delet featuresection5
 Route::post('/delete-featuresection5', [FeatureSection5Controller::class, 'deletefeaturesection5'])->name('delete.Featuresection5');
+//to add mainfaqs data
+Route::post('/mainfaqs/store', [MainFaqsController::class, 'store'])->name('mainfaqs.store');
+//to get mainfaqs data
+Route::get('/mainfaqs/{id}', [MainFaqsController::class, 'show'])->name('mainfaqs.show');
+// Update mainfaqs data
+Route::post('/mainfaqs/{id}', [MainFaqsController::class, 'update'])->name('mainfaqs.update');
+//to delet mainfaqs
+Route::post('/delete-mainfaqs', [MainFaqsController::class, 'deletemainfaqs'])->name('delete.mainfaqs');

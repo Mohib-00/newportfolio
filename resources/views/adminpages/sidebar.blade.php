@@ -85,6 +85,13 @@
           </li>
 
           <li class="nav-item">
+            <a href="/admin/add-faqs">
+              <i class="icon-star"></i>
+              <p>Add Faqs</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a data-bs-toggle="collapse" href="#sidebarLayouts">
               <i class="fas fa-th-list"></i>
               <p>Products</p>

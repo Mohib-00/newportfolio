@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                    
-                    <li class="nav-item dropdown">
+                    {{--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Features
                         </a>
@@ -52,7 +52,7 @@
                             <li><a class="dropdown-item dropdown-color" href="/invoicing-software">Invoicing</a></li>
                             <li><a class="dropdown-item dropdown-color" href="/OCR-software">Smart Scanning</a></li>
                         </ul>
-                    </li>
+                    </li>--}}
                    
                     <li class="nav-item">
                         <a class="nav-link" href="/our_blog">Blogs</a>
@@ -94,7 +94,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="nav navbar-nav ps-3 pl-sm-0">
-                    <li class="nav-item dropdown">
+                    {{--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Features
                         </a>
@@ -108,7 +108,7 @@
                             <li><a class="dropdown-item py-md-2" href="/invoicing-software" style="color:gray;">Invoicing</a></li>
                             <li><a class="dropdown-item py-md-2" href="/OCR-software" style="color:gray;">Smart Scanning</a></li>
                         </ul>
-                    </li>
+                    </li>--}}
                     
                     <li class="nav-item pe-md-3">
                         <a class="nav-link text-secondary" href="/our_blog">Blogs</a>
