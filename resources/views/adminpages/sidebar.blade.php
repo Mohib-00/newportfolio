@@ -211,6 +211,11 @@
                     <span class="sub-item">Blogs Detail</span>
                   </a>
                 </li>
+                <li>
+                  <a href="/admin/add-blog_detail_section">
+                    <span class="sub-item">Blogs Section</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </li>

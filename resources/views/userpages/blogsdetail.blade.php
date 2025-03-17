@@ -31,22 +31,28 @@
 <section class="singal-blog-three">
     <div class="container">
         <div class="row gy-5 gx-5 Ist-row">
+            @foreach($blogssections as $blogssection)
             <div class="col-lg-8 col-md-8 col-sm-12">
-                <div class="summer-notes-image">
-                    <h3 class="wp-block-heading" id="qualifications-required-for-accountants">
-                        <strong>Qualifications Required For Accountants</strong>
-                    </h3>
-                    <p>There are recognised accounting qualifications to look out for:</p>
-                    <ul>
-                        <li>
-                            <strong>ACA or FCA:</strong> Member or fellow of the 
-                            <a href="#">Institute of Chartered Accountants in England & Wales</a> (ICAEW). 
-                            Only members of this institute are entitled to use the title "Chartered Accountant." 
-                            A Scottish and Irish Institute is also available.
+                <div class="summer-notes-image" 
+                    style="{{ empty($blogssection->heading) ? 'margin-top: -50px; padding-top: 0;' : '' }}">
+                    
+                    @if(!empty($blogssection->heading))
+                        <h3 class="wp-block-heading" 
+                            style="margin-bottom: 10px;">
+                            <strong>{{$blogssection->heading}}</strong>
+                        </h3>
+                    @endif
+        
+                    <ul style="margin-top: 0; padding-top: 0;">
+                        <li style="margin-top: 0; padding-top: 0;">
+                            {{$blogssection->paragraph}}
                         </li>
                     </ul>
                 </div>
             </div>
+        @endforeach
+        
+
         </div>
     </div>
 </section>
