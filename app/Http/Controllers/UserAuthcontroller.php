@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\Feature;
 use App\Models\Highlight;
 use App\Models\MainFaqs;
+use App\Models\MainSection;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -185,7 +186,8 @@ public function logout() {
          $highlights = Highlight::all();  
          $features = Feature::all();
          $mainfaqses = MainFaqs::all();
-         return view('userpages.home', compact('user','projects','banners','highlights','features','mainfaqses'));
+         $mains = MainSection::all();
+         return view('userpages.home', compact('user','projects','banners','highlights','features','mainfaqses','mains'));
      }
      public function account(){ 
         $user = Auth::user();  

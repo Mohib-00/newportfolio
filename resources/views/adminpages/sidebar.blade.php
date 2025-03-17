@@ -76,6 +76,12 @@
               <p>Add Banner</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/admin/add-main_section">
+              <i class="icon-star"></i>
+              <p>Main Section</p>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a href="/admin/add-highlight">
