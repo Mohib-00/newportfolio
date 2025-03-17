@@ -3,6 +3,9 @@ use App\Http\Controllers\AboutServiceController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\BlogsDetailsController;
+use App\Http\Controllers\BlogsfirstsectionController;
 use App\Http\Controllers\Detailpage6;
 use App\Http\Controllers\DetailProductInventoryManagement;
 use App\Http\Controllers\Detailssection7Controller;
@@ -67,7 +70,9 @@ Route::get('/product/{slug}/details', [ProductDetailsController::class, 'details
 //to open feature detail
 Route::get('/feature/{slug}/details', [FeaturesdetailsController::class, 'detailsfeature'])
     ->name('feature.details');
-
+//to open blogs detail
+Route::get('/blogs/{slug}/details', [BlogsDetailsController::class, 'detailsblog'])
+    ->name('blogs.details');
 
 Route::group([
     "middleware" => ["auth:sanctum"]
@@ -105,6 +110,8 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-feature-section_4", [Featuresection5Controller::class, "featuresection5"]);
     Route::get("add-faqs", [MainFaqsController::class, "mainfaqs"]);
     Route::get("add-main_section", [MainSectionController::class, "mainsection"]);
+    Route::get("add-blog", [BlogsController::class, "blog"]);
+    Route::get("add-blog_detail", [BlogsfirstsectionController::class, "blogsdetails"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -278,3 +285,19 @@ Route::get('/main/{id}', [MainSectionController::class, 'show'])->name('main.sho
 Route::post('/main/{id}', [MainSectionController::class, 'update'])->name('main.update');
 //to delet main
 Route::post('/delete-main', [MainSectionController::class, 'deletemain'])->name('delete.main');
+//to add blog data
+Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog.store');
+//to get blog data
+Route::get('/blog/{id}', [BlogsController::class, 'show'])->name('blog.show');
+// Update blog data
+Route::post('/blog/{id}', [BlogsController::class, 'update'])->name('blog.update');
+//to delet blog
+Route::post('/delete-blog', [BlogsController::class, 'deleteblog'])->name('delete.blog');
+//to add blogdetails data
+Route::post('/detailblogssssss/store', [BlogsfirstsectionController::class, 'store'])->name('detailblogssssss.store');
+//to get blog data
+Route::get('/detailblogssssss/{id}', [BlogsfirstsectionController::class, 'show'])->name('detailblogssssss.show');
+// Update blog data
+Route::post('/detailblogssssss/{id}', [BlogsfirstsectionController::class, 'update'])->name('detailblogssssss.update');
+//to delet blog
+Route::post('/delete-detailblogssssss', [BlogsfirstsectionController::class, 'deletedetailblogssssss'])->name('delete.detailblogssssss');

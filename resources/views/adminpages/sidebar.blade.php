@@ -193,6 +193,28 @@
             </div>
           </li>
 
+          <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#forms">
+              <i class="fas fa-pen-square"></i>
+              <p>Blogs</p>
+              <span class="caret"></span>
+            </a>
+            <div class="collapse" id="forms">
+              <ul class="nav nav-collapse">
+                <li>
+                  <a href="/admin/add-blog">
+                    <span class="sub-item">Add Blogs</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/admin/add-blog_detail">
+                    <span class="sub-item">Blogs Detail</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
           
           <li class="nav-item">
             <a data-bs-toggle="collapse" href="#tables">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\blogs;
 use App\Models\Feature;
 use App\Models\Highlight;
 use App\Models\MainFaqs;
@@ -229,8 +230,9 @@ public function logout() {
         return view('userpages.ocr', compact('user'));
     }
     public function blog(){ 
-        $user = Auth::user();         
-        return view('userpages.blog', compact('user'));
+        $user = Auth::user();    
+        $blogs = blogs::all();     
+        return view('userpages.blog', compact('user','blogs'));
     }
     public function selectapp(){ 
         $user = Auth::user();         
