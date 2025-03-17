@@ -21,7 +21,7 @@
                             class="btn btn-primary mb-2 box-shadoww">
                             Details
                         </a>       
-                        <a class="btn btn-primary box-shadoww" href="/">Login</a>
+                        <a class="btn btn-primary box-shadoww" href="{{ $project->link }}">Login</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                                         class="btn btn-primary mb-2 box-shadoww">
                                         Details
                                     </a>       
-                                    <a class="btn btn-primary box-shadoww" href="/">Login</a>
+                                    <a class="btn btn-primary box-shadoww" href="{{ $project->link }}">Login</a>
                                 </div>
                             </div>
                         </div>

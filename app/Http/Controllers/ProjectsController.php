@@ -24,6 +24,7 @@ class ProjectsController extends Controller
                'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
                'name' => 'nullable',
                'links' => 'nullable',
+               'link' => 'nullable',
           ]);
       
           if ($validator->fails()) {
@@ -43,6 +44,7 @@ class ProjectsController extends Controller
               'image' => $fileName,
               'name' => $request->name,
               'links' => $request->links,
+              'link' => $request->link,
           ]);
       
           return response()->json([
@@ -71,6 +73,7 @@ class ProjectsController extends Controller
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'name' => 'nullable',
             'links' => 'nullable',
+            'link' => 'nullable',
        ]);
       
           if ($validator->fails()) {
@@ -98,6 +101,9 @@ class ProjectsController extends Controller
               $project->links = $request->links;
           }
       
+          if ($request->has('link')) {
+            $project->link = $request->link;
+        }
            $project->save();
       
           return response()->json([

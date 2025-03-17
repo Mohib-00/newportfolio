@@ -95,6 +95,7 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Slug</th>
+                                <th>Links</th>
                                 <th style="width: 10%">Action</th>
                               </tr>
                             </thead>
@@ -109,6 +110,7 @@
                                                </td>
                                                <td id="projectname">{{$project->name}}</td>
                                                <td id="projectlinks">{{$project->links}}</td>
+                                               <td id="projectlink">{{$project->link}}</td>
                                                 <td>
                                                     <div class="form-button-action">
                                                     <a data-project-id="{{ $project->id }}" class="btn btn-link btn-primary btn-lg edit-project-btn">
@@ -179,6 +181,12 @@
                                 <input type="text" id="links_add" name="links" class="form-control">
                             </div>
                         </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="link_add">Link</label>
+                                <input type="text" id="link_add" name="link" class="form-control">
+                            </div>
+                        </div>
                        
                     </div>
                     <div class="modal-footer mt-5" style="justify-content: flex-end; display: flex;">
@@ -226,6 +234,14 @@
                             <div class="form-group">
                                 <label for="links_edit">Slug</label>
                                 <input type="text" id="links_edit" name="links" class="form-control">
+                                <span class="invalid-feedback" id="links_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="link_edit">Links</label>
+                                <input type="text" id="link_edit" name="link" class="form-control">
                                 <span class="invalid-feedback" id="links_error"></span>
                             </div>
                         </div>
@@ -352,6 +368,7 @@
                             <td><img height="80" width="80" src="{{ asset('images/') }}/${project.image}" /></td>
                             <td>${project.name}</td>
                             <td>${project.links}</td>
+                            <td>${project.link}</td>
                             <td>
                                 <div class="form-button-action">
                                 <a id="projectedit" data-project-id="${project.id}" class="btn btn-link btn-primary btn-lg edit-project-btn">
@@ -406,10 +423,10 @@ $(document).on('click', '.edit-project-btn', function () {
                  if (response.project.icon) {
                     $('#projecteditform #image_edit').attr('src', "{{ asset('images') }}/" + response.project.image);
                 }
-                 $('#projecteditform #name_edit').val(response.project.name);
+                $('#projecteditform #name_edit').val(response.project.name);
                 $('#projecteditform #links_edit').val(response.project.links);
-
-                 $('.custom-modal.projectedit').fadeIn();
+                $('#projecteditform #link_edit').val(response.project.link);
+                $('.custom-modal.projectedit').fadeIn();
             }
         },
         error: function (xhr) {
@@ -453,6 +470,7 @@ $('#projecteditform').on('submit', function (e) {
                        project.find('td:nth-child(2) img').attr('src', '/images/' + response.project.image);
                        project.find('td:nth-child(3)').text(response.project.name);
                        project.find('td:nth-child(4)').text(response.project.links);
+                       project.find('td:nth-child(5)').text(response.project.link);
                    });
                } else {
                    Swal.fire({
