@@ -7,8 +7,8 @@
             @foreach($features as $feature)
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
                 <div class="card card-border shadow h-100">
-                    <img style="border-radius:50%" class="card-img-topp d-none d-md-block" src="{{ asset('images/' . $feature->image) }}" alt="bookkeeping-icon">
-                    <img style="border-radius:50%" class="card-img-topp d-md-none" src="{{ asset('images/' . $feature->image) }}" alt="bookkeeping-icon">
+                    <img height= 100 width= 100 style="border-radius:50%" class="card-img-topp d-none d-md-block" src="{{ asset('images/' . $feature->image) }}" alt="bookkeeping-icon">
+                    <img height= 100 width= 100 style="border-radius:50%" class="card-img-topp d-md-none" src="{{ asset('images/' . $feature->image) }}" alt="bookkeeping-icon">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{$feature->heading}}</h5>
                         <p class="card-text">

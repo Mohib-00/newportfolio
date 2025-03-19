@@ -20,8 +20,8 @@ class Section5DetailPage extends Controller
       {
           try {
               $validatedData = $request->validate([
-                  'image' => 'nullable|image',
-                  'sub_image' => 'nullable|image',
+                  'image' => 'nullable|',
+                  'sub_image' => 'nullable|',
                   'heading' => 'nullable|string',
                   'sub_heading' => 'nullable|string',
                   'paragraph' => 'nullable|string',

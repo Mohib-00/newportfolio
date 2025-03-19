@@ -2,11 +2,9 @@
     <div class="container">
         <div class="row px-sm-5 px-md-0 px-lg-0 mx-sm-5 mx-md-0 mx-lg-0 px-4 py-5">
             <div class="col-md-6 col-lg-3">
-                <img class="footer-logo" src="{{asset('index_files/Mobile_moneypex.svg')}}" alt="Moneypex Footer logo">
+                <img height= 150 width=40 class="footer-logo" src="{{ asset('images/' . $settings->logo) }}" alt="Moneypex Footer logo">
                 <p class="fs-6 pt-4">
-                    Moneypex accounting software’s dynamic features help small
-                    businesses manage their finances, bookkeeping, and customers at a
-                    glance.
+                   {{$settings->paragraph}}
                 </p>
             </div>
             <div class="col-md-6 col-lg-3">

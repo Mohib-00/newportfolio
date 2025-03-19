@@ -84,7 +84,7 @@ class Section4DetailPage extends Controller
               $validator = Validator::make($request->all(), [
                   'image' => 'nullable|image',
                   'hover_image' => 'nullable|image',
-                  'sub_image' => 'nullable|image',
+                  'sub_image' => 'nullable|',
                   'heading' => 'nullable|string',
                   'sub_heading' => 'nullable|string',
                   'paragraph' => 'nullable|string',

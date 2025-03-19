@@ -21,7 +21,7 @@ class ProjectsController extends Controller
       public function store(Request $request)
       {
           $validator = Validator::make($request->all(), [
-               'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+               'image' => 'nullable|image|max:2048',
                'name' => 'nullable',
                'links' => 'nullable',
                'link' => 'nullable',
@@ -70,7 +70,7 @@ class ProjectsController extends Controller
           $project = project::findOrFail($id);   
       
           $validator = Validator::make($request->all(), [
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|image|max:2048',
             'name' => 'nullable',
             'links' => 'nullable',
             'link' => 'nullable',

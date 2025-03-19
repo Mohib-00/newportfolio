@@ -482,8 +482,8 @@ $('#featurebannereditform').on('submit', function (e) {
                        featurebanner.find('td:nth-child(2) img').attr('src', '/images/' + response.featurebanner.image);
                        featurebanner.find('td:nth-child(3)').text(response.featurebanner.heading);
                        featurebanner.find('td:nth-child(4)').text(response.featurebanner.paragraph);
-                       featurebanner.find('td:nth-child(6)').text(response.featurebanner.sub_heading);
-                       featurebanner.find('td:nth-child(8)').text(response.featurebanner.slug);
+                       featurebanner.find('td:nth-child(5)').text(response.featurebanner.sub_heading);
+                       featurebanner.find('td:nth-child(6)').text(response.featurebanner.slug);
                    });
                } else {
                    Swal.fire({
