@@ -95,7 +95,8 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Slug</th>
-                                <th>Links</th>
+                                <th>Login Link</th>
+                                <th>Register Link</th>
                                 <th style="width: 10%">Action</th>
                               </tr>
                             </thead>
@@ -111,6 +112,7 @@
                                                <td id="projectname">{{$project->name}}</td>
                                                <td id="projectlinks">{{$project->links}}</td>
                                                <td id="projectlink">{{$project->link}}</td>
+                                               <td id="projectregister">{{$project->register}}</td>
                                                 <td>
                                                     <div class="form-button-action">
                                                     <a data-project-id="{{ $project->id }}" class="btn btn-link btn-primary btn-lg edit-project-btn">
@@ -183,8 +185,15 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="link_add">Link</label>
+                                <label for="link_add">Login Link</label>
                                 <input type="text" id="link_add" name="link" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="register_add">Register Link</label>
+                                <input type="text" id="register_add" name="register" class="form-control">
                             </div>
                         </div>
                        
@@ -240,8 +249,16 @@
 
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="link_edit">Links</label>
+                                <label for="link_edit">Login Link</label>
                                 <input type="text" id="link_edit" name="link" class="form-control">
+                                <span class="invalid-feedback" id="links_error"></span>
+                            </div>
+                        </div>
+                       
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="register_edit">Register Link</label>
+                                <input type="text" id="register_edit" name="register" class="form-control">
                                 <span class="invalid-feedback" id="links_error"></span>
                             </div>
                         </div>
@@ -369,6 +386,7 @@
                             <td>${project.name}</td>
                             <td>${project.links}</td>
                             <td>${project.link}</td>
+                            <td>${project.register}</td>
                             <td>
                                 <div class="form-button-action">
                                 <a id="projectedit" data-project-id="${project.id}" class="btn btn-link btn-primary btn-lg edit-project-btn">
@@ -426,6 +444,7 @@ $(document).on('click', '.edit-project-btn', function () {
                 $('#projecteditform #name_edit').val(response.project.name);
                 $('#projecteditform #links_edit').val(response.project.links);
                 $('#projecteditform #link_edit').val(response.project.link);
+                $('#projecteditform #register_edit').val(response.project.register);
                 $('.custom-modal.projectedit').fadeIn();
             }
         },
@@ -471,6 +490,7 @@ $('#projecteditform').on('submit', function (e) {
                        project.find('td:nth-child(3)').text(response.project.name);
                        project.find('td:nth-child(4)').text(response.project.links);
                        project.find('td:nth-child(5)').text(response.project.link);
+                       project.find('td:nth-child(6)').text(response.project.register);
                    });
                } else {
                    Swal.fire({

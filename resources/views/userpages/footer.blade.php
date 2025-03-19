@@ -20,9 +20,8 @@
                 </h5>
                 <ul class="pt-4 d-md-block collapse" id="quickLinksFooter">
                     <li><a href="/" class="text-decoration-none theme-color">Home</a></li>
-                    <li><a href="/" class="text-decoration-none theme-color"> Privacy Policy</a></li>
-                    <li><a href="/" class="text-decoration-none theme-color"> Contact Us</a></li>
-                    <li><a href="/" class="text-decoration-none theme-color"> Support</a></li>
+                    <li><a href="/our_blog" class="text-decoration-none theme-color"> Our Blogs</a></li>
+                    <li><a href="/contact_us" class="text-decoration-none theme-color"> Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 pt-4 pt-sm-0 pt-md-4 pt-lg-0">
@@ -36,9 +35,9 @@
                     </nav>
                 </h5>
                 <ul class="pt-4 collapse d-md-block" id="productsFooter">
-                    <li><a href="/" class="text-decoration-none theme-color">POS</a></li>
-                    <li><a href="/" class="text-decoration-none theme-color">Practice Manager</a></li>
-                    <li><a href="/" class="text-decoration-none theme-color">Rental Manager</a></li>
+                    @foreach($productssss as $product)
+                    <li><a href="{{ route('project.details', ['slug' => Str::slug($product->name)]) }}"  class="text-decoration-none theme-color">{{$product->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 follow-us pt-4 pt-sm-0 pt-md-4 pt-lg-0">

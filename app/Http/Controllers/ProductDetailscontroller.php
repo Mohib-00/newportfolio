@@ -8,6 +8,7 @@ use App\Models\Detailpagesection4;
 use App\Models\DetailPagesection5;
 use App\Models\DetailProductInventory;
 use App\Models\faqs;
+use App\Models\Feature;
 use App\Models\Message;
 use App\Models\ProductDetail;
 use App\Models\ProductDetailsHighlight;
@@ -155,7 +156,8 @@ public function detailsPage($slug)
     if ($products->isEmpty()) {
         return abort(404, 'No products found for this project');
     }
-    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys','section4s','section5s','section6s','section7s','faqsess'));
+    $features = Feature::all();
+    return view('userpages.productdetails', compact('project', 'products', 'user','productshighlights','inventorys','section4s','section5s','section6s','section7s','faqsess','features'));
 }
 
 }

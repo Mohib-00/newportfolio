@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Message;
+use App\Models\Project;
 use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,10 +35,12 @@ class AppServiceProvider extends ServiceProvider
             'facebook_link' => '',
             'twitter_link' => '',
         ]);
+        $productssss = Project::all();
     
         view()->share([
             'count' => $count,
             'settings' => $settings,
+            'productssss' => $productssss,
         ]);
     }
 }

@@ -25,6 +25,7 @@ class ProjectsController extends Controller
                'name' => 'nullable',
                'links' => 'nullable',
                'link' => 'nullable',
+               'register' => 'nullable',
           ]);
       
           if ($validator->fails()) {
@@ -45,6 +46,7 @@ class ProjectsController extends Controller
               'name' => $request->name,
               'links' => $request->links,
               'link' => $request->link,
+              'register' => $request->register,
           ]);
       
           return response()->json([
@@ -74,6 +76,7 @@ class ProjectsController extends Controller
             'name' => 'nullable',
             'links' => 'nullable',
             'link' => 'nullable',
+            'register' => 'nullable',
        ]);
       
           if ($validator->fails()) {
@@ -103,7 +106,10 @@ class ProjectsController extends Controller
       
           if ($request->has('link')) {
             $project->link = $request->link;
-        }
+          }
+          if ($request->has('register')) {
+            $project->register = $request->register;
+          }
            $project->save();
       
           return response()->json([

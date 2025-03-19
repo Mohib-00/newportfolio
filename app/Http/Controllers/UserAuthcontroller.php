@@ -231,20 +231,24 @@ public function logout() {
     }
     public function blog(){ 
         $user = Auth::user();    
-        $blogs = blogs::all();     
-        return view('userpages.blog', compact('user','blogs'));
+        $blogs = blogs::all();   
+        $features = Feature::all();  
+        return view('userpages.blog', compact('user','blogs','features'));
     }
     public function selectapp(){ 
         $user = Auth::user();         
-        return view('userpages.selectapp', compact('user'));
+        $projects = Project::all();
+        $features = Feature::all();  
+        return view('userpages.selectapp', compact('user','projects','features'));
     }
     public function growbusiness(){ 
         $user = Auth::user();         
         return view('userpages.growbusiness', compact('user'));
     }
     public function contact(){ 
-        $user = Auth::user();         
-        return view('userpages.contactpage', compact('user'));
+        $user = Auth::user(); 
+        $features = Feature::all();        
+        return view('userpages.contactpage', compact('user','features'));
     }
 
    public function  users(){ 

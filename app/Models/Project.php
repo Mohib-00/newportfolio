@@ -8,6 +8,6 @@ class Project extends Model
 {
     use HasFactory;
     protected $table = 'products';
-    protected $fillable = ['name', 'image', 'links'];  
+    protected $fillable = ['name', 'image', 'links','link','register'];  
 }
 

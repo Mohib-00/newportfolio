@@ -38,21 +38,16 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                    
-                    {{--<li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Features
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item dropdown-color" href="/accounting">Accounting</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/installment-management">Installment Management</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/manufacturing">Manufacturing</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/bookkeeping-software">Bookkeeping</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/expense-management-software">Expense Management</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/financial-reporting-software">Financial Reporting</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/invoicing-software">Invoicing</a></li>
-                            <li><a class="dropdown-item dropdown-color" href="/OCR-software">Smart Scanning</a></li>
+                            @foreach($features as $feature)
+                            <li><a class="dropdown-item dropdown-color" href="{{ route('feature.details', ['slug' => Str::slug($feature->heading)]) }}">{{$feature->heading}}</a></li>
+                            @endforeach
                         </ul>
-                    </li>--}}
+                    </li>
                    
                     <li class="nav-item">
                         <a class="nav-link" href="/our_blog">Blogs</a>
@@ -94,21 +89,16 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="nav navbar-nav ps-3 pl-sm-0">
-                    {{--<li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Features
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item py-md-2" href="/accounting" style="color:gray;">Accounting</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/installment-management-software" style="color:gray;">Installment Management</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/manufacturing" style="color:gray;">Manufacturing</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/bookkeeping-software" style="color:gray;">Bookkeeping</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/expense-management-software" style="color:gray;">Expense Management</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/financial-reporting-software" style="color:gray;">Financial Reporting</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/invoicing-software" style="color:gray;">Invoicing</a></li>
-                            <li><a class="dropdown-item py-md-2" href="/OCR-software" style="color:gray;">Smart Scanning</a></li>
+                            @foreach($features as $feature)
+                            <li><a class="dropdown-item py-md-2" href="{{ route('feature.details', ['slug' => Str::slug($feature->heading)]) }}" style="color:gray;">{{$feature->heading}}</a></li>
+                            @endforeach
                         </ul>
-                    </li>--}}
+                    </li>
                     
                     <li class="nav-item pe-md-3">
                         <a class="nav-link text-secondary" href="/our_blog">Blogs</a>
