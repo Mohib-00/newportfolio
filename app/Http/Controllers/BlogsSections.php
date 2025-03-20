@@ -58,7 +58,7 @@ public function update(Request $request, $id)
     $blog = BlogsSection::findOrFail($id);   
 
     $validator = Validator::make($request->all(), [
-      'heading' => 'nullable|string|max:255',
+      'heading' => 'nullable|string|max:555',
       'paragraph' => 'nullable',
       'slug' => 'nullable',
   ]);

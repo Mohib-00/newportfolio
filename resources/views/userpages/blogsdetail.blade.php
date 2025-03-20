@@ -22,7 +22,7 @@
                     </h5>
                     <h3 class="pt-3 theme-color">{{$blogsdetail->heading}}</h3>
                     <p class="fw-lighter date-text pt-2">{{ $blogsdetail->created_at->format('d F Y') }}</p>
-                    <img src="{{ asset('images/' . $blogsdetail->image) }}" class="w-100 pt-3 rounded-1" alt="hero-image">
+                    <img height=800 width=100 src="{{ asset('images/' . $blogsdetail->image) }}" class="w-100 pt-3 rounded-1" alt="hero-image">
             </div>
             @endforeach
         </div>

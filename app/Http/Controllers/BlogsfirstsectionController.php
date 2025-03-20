@@ -19,7 +19,7 @@ class BlogsfirstsectionController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'image' => 'nullable|image|max:1536',
+                'image' => 'nullable|image|max:2536',
                 'name' => 'required',
                 'heading' => 'required',
                 'slug' => 'required', 
@@ -75,9 +75,9 @@ public function update(Request $request, $id)
     $blog = BlogsDetail::findOrFail($id);   
 
     $validator = Validator::make($request->all(), [
-      'image' => 'nullable|image|max:1536', 
-      'name' => 'nullable|string|max:255',
-      'heading' => 'nullable|string|max:255',
+      'image' => 'nullable|image|max:2536', 
+      'name' => 'nullable|string|max:755',
+      'heading' => 'nullable|string|max:755',
       'slug' => 'nullable',
   ]);
 
