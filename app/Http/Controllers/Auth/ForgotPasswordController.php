@@ -13,12 +13,11 @@ class ForgotPasswordController extends Controller
     {
         return view('auth.forgot-password');
     }
-//passwordchange
-    public function sendResetLink(Request $request)
+
+      public function sendResetLink(Request $request)
 {
     $request->validate(['email' => 'required|email|exists:users,email']);
 
-    // Clear throttle for testing purposes
     RateLimiter::clear('passwords.'. $request->input('email'));
 
     $status = Password::sendResetLink($request->only('email'));
