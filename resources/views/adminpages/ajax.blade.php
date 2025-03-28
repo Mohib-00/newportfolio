@@ -346,6 +346,20 @@ $(document).on('click', '#submitpassword', function(e) {
  });
 });
 
- 
+
 </script>
+<script>
+   function loadUsersPage() {
+    fetch('/admin/users')
+    .then(response => response.text())
+    .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+        window.history.pushState({}, '', '/admin/users');
+    })
+    .catch(error => console.error('Error loading page:', error));
+}
+
+    </script>
 </body>

@@ -18,7 +18,7 @@
         font-weight: bold;
         margin-left: auto;
     }
-
+    find('td:nth-child(2) img').attr('src', `/public/images/${response.blog.image}?t=${Date.now()}`);
     .adddetail6:hover {
         background-color: #45a049;  
     }

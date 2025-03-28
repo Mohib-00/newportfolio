@@ -335,4 +335,74 @@ $(document).ready(function() {
 });
  
 </script>
+<script>
+    function loadBlogsPage() {
+     fetch('/our_blog')
+     .then(response => response.text())
+     .then(html => {
+         document.open();
+         document.write(html);
+         document.close();
+         window.history.pushState({}, '', '/our_blog');
+     })
+     .catch(error => console.error('Error loading page:', error));
+ }
+ function loadFeatureDetails(slug) {
+    fetch(`/feature/${slug}/details`)
+    .then(response => response.text())
+    .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+        window.history.pushState({}, '', `/feature/${slug}/details`);
+    })
+    .catch(error => console.error('Error loading feature details:', error));
+}
+function loadContactPage() {
+     fetch('/contact_us')
+     .then(response => response.text())
+     .then(html => {
+         document.open();
+         document.write(html);
+         document.close();
+         window.history.pushState({}, '', '/contact_us');
+     })
+     .catch(error => console.error('Error loading page:', error));
+ }
+
+ function loadSelectAppPage() {
+     fetch('/select_app')
+     .then(response => response.text())
+     .then(html => {
+         document.open();
+         document.write(html);
+         document.close();
+         window.history.pushState({}, '', '/select_app');
+     })
+     .catch(error => console.error('Error loading page:', error));
+ }
+ function loadPage() {
+     fetch('/')
+     .then(response => response.text())
+     .then(html => {
+         document.open();
+         document.write(html);
+         document.close();
+         window.history.pushState({}, '', '/');
+     })
+     .catch(error => console.error('Error loading page:', error));
+ }
+
+ function loadProductDetails(slug) {
+    fetch(`/product/${slug}/details`)
+    .then(response => response.text())
+    .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+        window.history.pushState({}, '', `/product/${slug}/details`);
+    })
+    .catch(error => console.error('Error loading feature details:', error));
+}
+</script>
 </body>

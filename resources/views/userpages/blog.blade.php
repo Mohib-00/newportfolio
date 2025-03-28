@@ -7,8 +7,7 @@
  <body>
     
   @include('userpages.header')
-<link href="./Blogs_files/stylesheet.css" rel="stylesheet">
-<section class="one background-hero-image">
+<section class="one background-hero-image" style="background: #cccccc">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-12 col-sm-12 col-md-6">
@@ -17,13 +16,13 @@
                 </div>
             </div>
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-12 col-sm-12 col-md-6">
-                <img src="./Blogs_files/group-diverse-people-using-digital-devices.png" class="w-75" alt="hero-image">
+                <img src="{{asset('Blogs_files/group-diverse-people-using-digital-devices.png')}}" class="w-75" alt="hero-image">
             </div>
         </div>
     </div>
 </section>
 
-<section class="five">
+<section class="five mt-2">
     <div class="container">
         <div class="row gx-5 gy-5">
             @php

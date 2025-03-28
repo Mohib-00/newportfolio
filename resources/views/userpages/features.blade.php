@@ -14,7 +14,7 @@
                         <p class="card-text">
                             {{$feature->paragraph}}
                         </p>
-                        <a href="{{ route('feature.details', ['slug' => Str::slug($feature->heading)]) }}" 
+                        <a href="#" onclick="loadFeatureDetails('{{ Str::slug($feature->heading) }}'); return false;" 
                             class="text-color text-decoration-none">
                              Learn More &gt;
                          </a>

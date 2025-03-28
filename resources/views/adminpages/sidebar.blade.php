@@ -56,7 +56,7 @@
             <h4 class="text-section">Components</h4>
           </li>
           <li class="nav-item">
-            <a href="/admin/users">
+            <a href="#" onclick="loadUsersPage(); return false;">
               <i class="icon-user"></i>
               <p>Users</p>
             </a>

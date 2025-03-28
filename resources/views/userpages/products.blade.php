@@ -17,7 +17,7 @@
                 </div>
                 <div class="w-100 text-end">
                     <div class="d-flex flex-column align-items-end">
-                        <a href="{{ route('project.details', ['slug' => Str::slug($project->name)]) }}" 
+                        <a href="#" onclick="loadProductDetails('{{ Str::slug($project->name) }}'); return false;" {{--href="{{ route('project.details', ['slug' => Str::slug($project->name)]) }}"--}}
                             class="btn btn-primary mb-2 box-shadoww">
                             Details
                         </a>       
