@@ -349,17 +349,173 @@ $(document).on('click', '#submitpassword', function(e) {
 
 </script>
 <script>
-   function loadUsersPage() {
-    fetch('/admin/users')
-    .then(response => response.text())
-    .then(html => {
-        document.open();
-        document.write(html);
-        document.close();
-        window.history.pushState({}, '', '/admin/users');
-    })
-    .catch(error => console.error('Error loading page:', error));
+ function createLoader() {
+    const loader = document.createElement('div');
+    loader.id = 'loader';
+    loader.style.position = 'fixed';
+    loader.style.top = '0';
+    loader.style.left = '0';
+    loader.style.width = '100%';
+    loader.style.height = '100%';
+    loader.style.backgroundColor = 'rgba(128, 128, 128, 0.6)';
+    loader.style.display = 'flex';
+    loader.style.alignItems = 'center';
+    loader.style.justifyContent = 'center';
+    loader.style.zIndex = '9999';
+
+    const spinner = document.createElement('div');
+    spinner.style.border = '6px solid #f3f3f3';
+    spinner.style.borderTop = '6px solid #3498db';
+    spinner.style.borderRadius = '50%';
+    spinner.style.width = '50px';
+    spinner.style.height = '50px';
+    spinner.style.animation = 'spin 0.8s linear infinite';
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    loader.appendChild(spinner);
+    document.body.appendChild(loader);
 }
 
-    </script>
+function loadPage(url, pushStateUrl) {
+    createLoader();
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', pushStateUrl);
+        })
+        .catch(error => {
+            console.error('Error loading page:', error);
+        })
+        .finally(() => {
+            const existingLoader = document.getElementById('loader');
+            if (existingLoader) {
+                existingLoader.remove();
+            }
+        });
+}
+
+function loadUsersPage() {
+    loadPage('/admin/users', '/admin/users');
+}
+
+function loadMessagePage() {
+    loadPage('/admin/messages', '/admin/messages');
+}
+
+function loadBannerPage() {
+    loadPage('/admin/add-banner-details', '/admin/add-banner-details');
+}
+
+function loadmainsection() {
+    loadPage('/admin/add-main_section', '/admin/add-main_section');
+}
+
+function loadhighlight() {
+    loadPage('/admin/add-highlight', '/admin/add-highlight');
+}
+
+function loadfaqs() {
+    loadPage('/admin/add-faqs', '/admin/add-faqs');
+}
+
+function loadproducts() {
+    loadPage('/admin/add-products', '/admin/add-products');
+}
+
+function loadproductdetailsbanner() {
+    loadPage('/admin/add-product-details-banner', '/admin/add-product-details-banner');
+}
+
+function loadhighlighttt() {
+    loadPage('/admin/add-product-details-highlight', '/admin/add-product-details-highlight');
+}
+
+
+function loadmanagement() {
+    loadPage('/admin/add-product-inventory-management', '/admin/add-product-inventory-management');
+}
+
+
+function loaddetailpagesection_4() {
+    loadPage('/admin/add-detail-page-section_4', '/admin/add-detail-page-section_4');
+}
+
+
+function loaddetailpagesection_5() {
+    loadPage('/admin/add-detail-page-section_5', '/admin/add-detail-page-section_5');
+}
+
+
+
+function loaddetailpagesection_6() {
+    loadPage('/admin/add-detail-page-section_6', '/admin/add-detail-page-section_6');
+}
+
+
+function loaddetailpagesection_7() {
+    loadPage('/admin/add-detail-page-section_7', '/admin/add-detail-page-section_7');
+}
+
+function loaddetailpagefaqs() {
+    loadPage('/admin/add-detail-page-faqs', '/admin/add-detail-page-faqs');
+}
+
+
+function loadfeatures() {
+    loadPage('/admin/add-features', '/admin/add-features');
+}
+
+
+function loadfeaturebanner() {
+    loadPage('/admin/add-feature-banner', '/admin/add-feature-banner');
+}
+
+
+function loadfeaturehighlights() {
+    loadPage('/admin/add-feature-highlights', '/admin/add-feature-highlights');
+}
+
+
+function loadfeaturesection_3() {
+    loadPage('/admin/add-feature-section_3', '/admin/add-feature-section_3');
+}
+
+
+function loadfeaturesection_4() {
+    loadPage('/admin/add-feature-section_4', '/admin/add-feature-section_4');
+}
+
+
+function loadblog() {
+    loadPage('/admin/add-blog', '/admin/add-blog');
+}
+
+
+function loadblog_detail() {
+    loadPage('/admin/add-blog_detail', '/admin/add-blog_detail');
+}
+
+
+function loadblog_detail_section() {
+    loadPage('/admin/add-blog_detail_section', '/admin/add-blog_detail_section');
+}
+
+
+function loadsettings() {
+    loadPage('/admin/add-settings', '/admin/add-settings');
+}
+
+</script>
 </body>
+

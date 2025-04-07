@@ -56,14 +56,14 @@
             <h4 class="text-section">Components</h4>
           </li>
           <li class="nav-item">
-            <a href="#" onclick="loadUsersPage(); return false;">
+            <a href="/admin/users" onclick="loadUsersPage(); return false;">
               <i class="icon-user"></i>
               <p>Users</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/admin/messages">
+            <a href="/admin/messages" onclick="loadMessagePage(); return false;">
               <i class="icon-speech"></i>
               <p>Messages</p>
               <span class="badge badge-success">{{$count}}</span>
@@ -71,27 +71,27 @@
           </li>
 
           <li class="nav-item">
-            <a href="/admin/add-banner-details">
+            <a href="/admin/add-banner-details" onclick="loadBannerPage(); return false;" >
               <i class="icon-star"></i>
               <p>Add Banner</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/add-main_section">
+            <a onclick="loadmainsection(); return false;" href="/admin/add-main_section">
               <i class="icon-star"></i>
               <p>Main Section</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/admin/add-highlight">
+            <a onclick="loadhighlight(); return false;" href="/admin/add-highlight">
               <i class="icon-target"></i>
               <p>Add Highlight</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/admin/add-faqs">
+            <a onclick="loadfaqs(); return false;" href="/admin/add-faqs">
               <i class="icon-star"></i>
               <p>Add Faqs</p>
             </a>
@@ -106,47 +106,47 @@
             <div class="collapse" id="sidebarLayouts">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="/admin/add-products">
+                  <a onclick="loadproducts(); return false;" href="/admin/add-products">
                     <span class="sub-item">Add Products</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-product-details-banner">
+                  <a onclick="loadproductdetailsbanner(); return false;" href="/admin/add-product-details-banner">
                     <span class="sub-item">Add Products Detail Banner</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-product-details-highlight">
+                  <a onclick="loadhighlighttt(); return false;" href="/admin/add-product-details-highlight">
                     <span class="sub-item">Add Products Detail Highlight</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-product-inventory-management">
+                  <a onclick="loadmanagement(); return false;" href="/admin/add-product-inventory-management">
                     <span class="sub-item">Add Inventory Management</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-detail-page-section_4">
+                  <a onclick="loaddetailpagesection_4(); return false;" href="/admin/add-detail-page-section_4">
                     <span class="sub-item">Add Section 4</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-detail-page-section_5">
+                  <a onclick="loaddetailpagesection_5(); return false;" href="/admin/add-detail-page-section_5">
                     <span class="sub-item">Add Section 5</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-detail-page-section_6">
+                  <a onclick="loaddetailpagesection_6(); return false;" href="/admin/add-detail-page-section_6">
                     <span class="sub-item">Add Section 6</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-detail-page-section_7">
+                  <a onclick="loaddetailpagesection_7(); return false;" href="/admin/add-detail-page-section_7">
                     <span class="sub-item">Add Section 7</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-detail-page-faqs">
+                  <a onclick="loaddetailpagefaqs(); return false;" href="/admin/add-detail-page-faqs">
                     <span class="sub-item">Add Faqs</span>
                   </a>
                 </li>
@@ -164,27 +164,27 @@
             <div class="collapse" id="maps">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="/admin/add-features">
+                  <a onclick="loadfeatures(); return false;" href="/admin/add-features">
                     <span class="sub-item">Add Features</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-feature-banner">
+                  <a onclick="loadfeaturebanner(); return false;" href="/admin/add-feature-banner">
                     <span class="sub-item">Add Banner</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-feature-highlights">
+                  <a onclick="loadfeaturehighlights(); return false;" href="/admin/add-feature-highlights">
                     <span class="sub-item">Add Highligts</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-feature-section_3">
+                  <a onclick="loadfeaturesection_3(); return false;" href="/admin/add-feature-section_3">
                     <span class="sub-item">Add Section 3</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-feature-section_4">
+                  <a onclick="loadfeaturesection_4(); return false;" href="/admin/add-feature-section_4">
                     <span class="sub-item">Add Section 4</span>
                   </a>
                 </li>
@@ -202,17 +202,17 @@
             <div class="collapse" id="forms">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="/admin/add-blog">
+                  <a onclick="loadblog(); return false;" href="/admin/add-blog">
                     <span class="sub-item">Add Blogs</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-blog_detail">
+                  <a onclick="loadblog_detail(); return false;" href="/admin/add-blog_detail">
                     <span class="sub-item">Blogs Detail</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/add-blog_detail_section">
+                  <a onclick="loadblog_detail_section(); return false;" href="/admin/add-blog_detail_section">
                     <span class="sub-item">Blogs Section</span>
                   </a>
                 </li>
@@ -230,7 +230,7 @@
             <div class="collapse" id="tables">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="/admin/add-settings">
+                  <a onclick="loadsettings(); return false;" href="/admin/add-settings">
                     <span class="sub-item">Website Settings</span>
                   </a>
                 </li>
