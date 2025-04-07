@@ -336,73 +336,160 @@ $(document).ready(function() {
  
 </script>
 <script>
-    function loadBlogsPage() {
-     fetch('/our_blog')
-     .then(response => response.text())
-     .then(html => {
-         document.open();
-         document.write(html);
-         document.close();
-         window.history.pushState({}, '', '/our_blog');
-     })
-     .catch(error => console.error('Error loading page:', error));
- }
- function loadFeatureDetails(slug) {
+   function showLoader() {
+    if (!document.getElementById('loader')) {
+        const loader = document.createElement('div');
+        loader.id = 'loader';
+        loader.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5); z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+        `;
+        loader.innerHTML = `
+            <div style="
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid #3498db;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 1s linear infinite;
+            "></div>
+            <style>
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+        `;
+        document.body.appendChild(loader);
+    }
+}
+
+function hideLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.remove();
+    }
+}
+
+function loadBlogsPage() {
+    showLoader();
+    fetch('/our_blog')
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', '/our_blog');
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading page:', error);
+        });
+}
+
+function loadFeatureDetails(slug) {
+    showLoader();
     fetch(`/feature/${slug}/details`)
-    .then(response => response.text())
-    .then(html => {
-        document.open();
-        document.write(html);
-        document.close();
-        window.history.pushState({}, '', `/feature/${slug}/details`);
-    })
-    .catch(error => console.error('Error loading feature details:', error));
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', `/feature/${slug}/details`);
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading feature details:', error);
+        });
 }
+
 function loadContactPage() {
-     fetch('/contact_us')
-     .then(response => response.text())
-     .then(html => {
-         document.open();
-         document.write(html);
-         document.close();
-         window.history.pushState({}, '', '/contact_us');
-     })
-     .catch(error => console.error('Error loading page:', error));
- }
-
- function loadSelectAppPage() {
-     fetch('/select_app')
-     .then(response => response.text())
-     .then(html => {
-         document.open();
-         document.write(html);
-         document.close();
-         window.history.pushState({}, '', '/select_app');
-     })
-     .catch(error => console.error('Error loading page:', error));
- }
- function loadPage() {
-     fetch('/')
-     .then(response => response.text())
-     .then(html => {
-         document.open();
-         document.write(html);
-         document.close();
-         window.history.pushState({}, '', '/');
-     })
-     .catch(error => console.error('Error loading page:', error));
- }
-
- function loadProductDetails(slug) {
-    fetch(`/product/${slug}/details`)
-    .then(response => response.text())
-    .then(html => {
-        document.open();
-        document.write(html);
-        document.close();
-        window.history.pushState({}, '', `/product/${slug}/details`);
-    })
-    .catch(error => console.error('Error loading feature details:', error));
+    showLoader();
+    fetch('/contact_us')
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', '/contact_us');
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading page:', error);
+        });
 }
+
+function loadSelectAppPage() {
+    showLoader();
+    fetch('/select_app')
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', '/select_app');
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading page:', error);
+        });
+}
+
+function loadPage() {
+    showLoader();
+    fetch('/')
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', '/');
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading page:', error);
+        });
+}
+
+function loadProductDetails(slug) {
+    showLoader();
+    fetch(`/product/${slug}/details`)
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', `/product/${slug}/details`);
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading product details:', error);
+        });
+}
+
+function loadBlogDetails(slug) {
+    showLoader();
+    fetch(`/blogs/${slug}/details`)
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', `/blogs/${slug}/details`);
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading blog details:', error);
+        });
+}
+
 </script>
 </body>

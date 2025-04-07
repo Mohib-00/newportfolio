@@ -43,7 +43,7 @@
                    <h4 class="theme-color">{{$blog->heading}}</h4>
                    <p>{{$blog->paragraph}}</p>
                </div>
-               <a href="{{ route('blogs.details', ['slug' => Str::slug($blog->name)]) }}" class="text-decoration-none fw-bold">Read More &gt;&gt;</a>
+               <a href="#" onclick="loadBlogDetails('{{ Str::slug($blog->name) }}'); return false;" class="text-decoration-none fw-bold">Read More &gt;&gt;</a>
            </div>
        @endforeach
                 
@@ -77,7 +77,7 @@
             <h4 class="theme-color">{{$blog->heading}}</h4>
             <p>{{$blog->paragraph}}</p>
         </div>
-        <a href="{{ route('blogs.details', ['slug' => Str::slug($blog->name)]) }}" class="text-decoration-none fw-bold">Read More &gt;&gt;</a>
+        <a href="#" onclick="loadBlogDetails('{{ Str::slug($blog->name) }}'); return false;" class="text-decoration-none fw-bold">Read More &gt;&gt;</a>
     </div>
 @endforeach
 
