@@ -30,7 +30,7 @@
 </section>
 <section class="singal-blog-three">
     <div class="container">
-        <div class="row gy-5 gx-5 Ist-row">
+        <div class="row gy-5  Ist-row">
             @foreach($blogssections as $blogssection)
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="summer-notes-image" 
