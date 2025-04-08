@@ -14,7 +14,6 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
 <script>
 //register
 $(document).ready(function () {
@@ -82,8 +81,6 @@ $(document).ready(function () {
     if (!valid) {
         return;  
     }
-
-    
     $.ajax({
         url: '/register', 
         type: 'POST',
@@ -116,8 +113,6 @@ $(document).ready(function () {
         }
     });
 }
-
-
     
     //login
     $('#login').on('click', function (e) {
@@ -213,7 +208,6 @@ $(document).ready(function () {
         }
     });
 }
-
 });
      
 //logout
@@ -225,7 +219,6 @@ $(document).ready(function () {
            }
        });
 
-     
     $('.logout').on('click', function () {
    
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
@@ -242,7 +235,6 @@ $(document).ready(function () {
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token')
         },
-        
         success: function (response) {
             if (response.status) {
                 localStorage.removeItem('token');
@@ -295,17 +287,10 @@ $(document).ready(function() {
       });
   });
 });
-
-
         
 if ((window.location.pathname === '/admin' || window.location.pathname === '/admin/add-graphic-details' || window.location.pathname === '/admin/add-marketing-details' || window.location.pathname === '/admin/add-pos-details' || window.location.pathname === '/admin/add-web-details' || window.location.pathname === '/admin/add-about-service'  || window.location.pathname === '/admin/admin-profile' || window.location.pathname === '/admin/add-feedback' || window.location.pathname === '/admin/add-blog' || window.location.pathname === '/admin/add-service' || window.location.pathname === '/admin/users' || window.location.pathname === '/admin/customer-messages' || window.location.pathname === '/admin/website-settings' || window.location.pathname === '/admin/add-slider-data' || window.location.pathname === '/admin/add-projects') && !localStorage.getItem('token')) {
         window.location.href = '/';  
     }
- 
-
-
- 
-
      //to open admin page
    $('.admin').click(function () {
     if (!localStorage.getItem('token')) {
@@ -326,11 +311,7 @@ if ((window.location.pathname === '/admin' || window.location.pathname === '/adm
         }
     });
 });
-
-    
 });
-
-
 
 //to open login page
 $(document).ready(function() {
