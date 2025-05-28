@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row px-sm-5 px-md-0 px-lg-0 mx-sm-5 mx-md-0 mx-lg-0 px-4 py-5">
             <div class="col-md-6 col-lg-3">
-                <img height= 150 width=40 class="footer-logo" src="{{ asset('images/' . $settings->logo) }}" alt="Moneypex Footer logo">
+                <img height= 100 width=40 class="footer-logo" src="{{ asset('images/' . $settings->logo) }}" alt="Moneypex Footer logo">
                 <p class="fs-6 pt-4">
                    {{$settings->paragraph}}
                 </p>
@@ -10,7 +10,7 @@
             <div class="col-md-6 col-lg-3">
                 <h5 class="ms-sm-4 fw-bold">
                     Quick Links
-                    <nav class="d-inline navbar navbar-expand-md bg-white navbar-light d-md-none bg-transparent">
+                    <nav class="d-inline navbar navbar-expand-md bg-whhreite navbar-light d-md-none bg-transparent">
                         <button class="navbar-toggler border border-2 ms-3 border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#quickLinksFooter">
                             <span class="navbar-toggler-icon navbar-dark d-none"></span>
                             <img src="{{asset('index_files/dropdown small.png')}}" alt="dropdown small">
@@ -45,6 +45,8 @@
                 <div class="pt-4 ps-5 ps-sm-0 pb-3 pb-md-0">
                     <a href="{{$settings->facebook_link}}"> <img src="{{asset('index_files/facebook icon.png')}}" alt="facebook icon"></a>
                     <a href="{{$settings->twitter_link}}"> <img src="{{asset('index_files/Instagram icon.png')}}" alt="Instagram icon"></a>
+                    
+                     <a href=""> <img src="{{asset('index_files/Linkedin icon.png')}}" alt="Instagram icon"></a>
                 </div>
                 <p class="fs-6 mt-3 lh-sm"><b class="fw-bold">Email:</b>{{$settings->email}}</p>
                 <p class="fs-6 lh-sm"><b class="fw-bold">Phone:</b>{{$settings->phone}}</p>
