@@ -27,6 +27,8 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Section4DetailPage;
 use App\Http\Controllers\Section5DetailPage;
+use App\Http\Controllers\ServiceBannercontroller;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserAuthcontroller;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +77,11 @@ Route::get('/feature/{slug}/details', [FeaturesdetailsController::class, 'detail
 Route::get('/blogs/{slug}/details', [BlogsDetailsController::class, 'detailsblog'])
     ->name('blogs.details');
 
+
+//to open servce detail
+Route::get('/service/{slug}/details', [ServiceController::class, 'detailsservice'])
+    ->name('service.details');    
+
 Route::group([
     "middleware" => ["auth:sanctum"]
 ],function(){
@@ -114,6 +121,8 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-blog", [BlogsController::class, "blog"]);
     Route::get("add-blog_detail", [BlogsfirstsectionController::class, "blogsdetails"]);
     Route::get("add-blog_detail_section", [BlogsSections::class, "blogssectionsssss"]);
+    Route::get("services", [ServiceController::class, "openservices"]);
+    Route::get("add-service-banner", [ServiceBannercontroller::class, "servicebanner"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -311,3 +320,19 @@ Route::get('/sectionssssssssblog/{id}', [BlogsSections::class, 'show'])->name('s
 Route::post('/sectionssssssssblog/{id}', [BlogsSections::class, 'update'])->name('sectionssssssssblog.update');
 //to delet blog
 Route::post('/delete-sectionssssssssblog', [BlogsSections::class, 'deletesectionssssssssblog'])->name('delete.sectionssssssssblog');
+//to add service data
+Route::post('/service/store', [ServiceController::class, 'store'])->name('service.store');
+//to get service data
+Route::get('/service/{id}', [ServiceController::class, 'show'])->name('service.show');
+// Update service data
+Route::post('/service/{id}', [ServiceController::class, 'update'])->name('service.update');
+//to delet service
+Route::post('/delete-service', [ServiceController::class, 'deleteservice'])->name('delete.service');
+//to add servicebanner data
+Route::post('/servicebanner/store', [ServiceBannercontroller::class, 'store'])->name('servicebanner.store');
+//to get section5 data
+Route::get('/servicebanner/{id}', [ServiceBannercontroller::class, 'show'])->name('servicebanner.show');
+// Update section5 data
+Route::post('/servicebanner/{id}', [ServiceBannercontroller::class, 'update'])->name('servicebanner.update');
+//to delet section5
+Route::post('/delete-servicebanner', [ServiceBannercontroller::class, 'deleteservicebanner'])->name('delete.servicebanner');

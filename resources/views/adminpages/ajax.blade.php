@@ -516,6 +516,15 @@ function loadsettings() {
     loadPage('/admin/add-settings', '/admin/add-settings');
 }
 
+
+function services() {
+    loadPage('/admin/services', '/admin/services');
+}
+
+function loadservicebanner() {
+    loadPage('/admin/add-service-banner', '/admin/add-service-banner');
+}
+
 </script>
 </body>
 

@@ -9,6 +9,7 @@ use App\Models\Highlight;
 use App\Models\MainFaqs;
 use App\Models\MainSection;
 use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -188,7 +189,9 @@ public function logout() {
          $features = Feature::all();
          $mainfaqses = MainFaqs::all();
          $mains = MainSection::all();
-         return view('userpages.home', compact('user','projects','banners','highlights','features','mainfaqses','mains'));
+         $services = Service::orderBy('created_at', 'desc')
+        ->get(); 
+         return view('userpages.home', compact('user','projects','banners','highlights','features','mainfaqses','mains','services'));
      }
      public function account(){ 
         $user = Auth::user();  

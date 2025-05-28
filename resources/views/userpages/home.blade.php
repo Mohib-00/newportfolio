@@ -7,6 +7,7 @@
     @include('userpages.header')
     @include('userpages.banner')
     @include('userpages.bannersection')
+    @include('userpages.services')
     @include('userpages.products')
     @include('userpages.features')
     @include('userpages.section5')

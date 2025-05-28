@@ -169,7 +169,7 @@
                   </a>
                 </li>
                 <li>
-                  <a onclick="loadfeaturebanner(); return false;" href="/admin/add-feature-banner">
+                  <a onclick="loadservicebanner(); return false;" href="/admin/add-feature-banner">
                     <span class="sub-item">Add Banner</span>
                   </a>
                 </li>
@@ -219,6 +219,28 @@
               </ul>
             </div>
           </li>
+
+            <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#charts">
+                  <i class="far fa-chart-bar"></i>
+                  <p>Services</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="charts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a onclick="services(); return false;" href="/admin/services">
+                        <span class="sub-item">Services</span>
+                      </a>
+                    </li>
+                     <li>
+                      <a onclick="loadservicebanner(); return false;" href="/admin/add-service-banner">
+                        <span class="sub-item">Add Banner</span>
+                      </a>
+                </li>
+                  </ul>
+                </div>
+              </li>
 
           
           <li class="nav-item">

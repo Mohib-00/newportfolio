@@ -491,5 +491,25 @@ function loadBlogDetails(slug) {
         });
 }
 
+
+
+
+function loadserviceDetails(slug) {
+    showLoader();
+    fetch(`/service/${slug}/details`)
+        .then(response => response.text())
+        .then(html => {
+            hideLoader();
+            document.open();
+            document.write(html);
+            document.close();
+            window.history.pushState({}, '', `/service/${slug}/details`);
+        })
+        .catch(error => {
+            hideLoader();
+            console.error('Error loading feature details:', error);
+        });
+}
+
 </script>
 </body>
