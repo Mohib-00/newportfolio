@@ -29,6 +29,7 @@ use App\Http\Controllers\Section4DetailPage;
 use App\Http\Controllers\Section5DetailPage;
 use App\Http\Controllers\ServiceBannercontroller;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceHighlightController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserAuthcontroller;
 use Illuminate\Support\Facades\Route;
@@ -76,8 +77,6 @@ Route::get('/feature/{slug}/details', [FeaturesdetailsController::class, 'detail
 //to open blogs detail
 Route::get('/blogs/{slug}/details', [BlogsDetailsController::class, 'detailsblog'])
     ->name('blogs.details');
-
-
 //to open servce detail
 Route::get('/service/{slug}/details', [ServiceController::class, 'detailsservice'])
     ->name('service.details');    
@@ -123,6 +122,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("add-blog_detail_section", [BlogsSections::class, "blogssectionsssss"]);
     Route::get("services", [ServiceController::class, "openservices"]);
     Route::get("add-service-banner", [ServiceBannercontroller::class, "servicebanner"]);
+    Route::get("add-service-highlights", [ServiceHighlightController::class, "servicehighlight"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -336,3 +336,11 @@ Route::get('/servicebanner/{id}', [ServiceBannercontroller::class, 'show'])->nam
 Route::post('/servicebanner/{id}', [ServiceBannercontroller::class, 'update'])->name('servicebanner.update');
 //to delet section5
 Route::post('/delete-servicebanner', [ServiceBannercontroller::class, 'deleteservicebanner'])->name('delete.servicebanner');
+//to add servicehighlight data
+Route::post('/servicehighlight/store', [ServiceHighlightController::class, 'storeservicehighlight'])->name('servicehighlight.store');
+//to get servicehighlight data
+Route::get('/servicehighlight/{id}', [ServiceHighlightController::class, 'showservicehighlight'])->name('servicehighlight.show');
+// Update servicehighlight data
+Route::post('/servicehighlight/{id}', [ServiceHighlightController::class, 'updateservicehighlight'])->name('servicehighlight.update');
+//to delet servicehighlight
+Route::post('/delete-servicehighlight', [ServiceHighlightController::class, 'deleteservicehighlight'])->name('delete.servicehighlight');

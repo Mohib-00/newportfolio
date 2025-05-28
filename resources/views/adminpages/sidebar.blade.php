@@ -237,7 +237,13 @@
                       <a onclick="loadservicebanner(); return false;" href="/admin/add-service-banner">
                         <span class="sub-item">Add Banner</span>
                       </a>
-                </li>
+                     </li>
+
+                    <li>
+                    <a onclick="loadservicehighlights(); return false;" href="/admin/add-service-highlights">
+                    <span class="sub-item">Add Highligts</span>
+                    </a>
+                    </li>
                   </ul>
                 </div>
               </li>

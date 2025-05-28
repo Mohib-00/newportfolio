@@ -70,16 +70,16 @@
     </section>
 <!-- ? Hero section end-->
 <!-- ? service cards section start-->
-{{--<section class="service-cards-wrapper d-flex justify-content-center">
+<section class="feature-cards-wrapper d-flex justify-content-center">
     <div class="container">
         <div class="row px-sm-5 px-3">
-            @foreach ($servicehighlights as $productshighlight)
+            @foreach ($servicehighlights as $servicehighlight)
             <div class="col-lg-4 mt-md-4 mt-lg-0 d-flex align-items-center justify-content-center pt-3 pt-md-0">
-                <div class="service-page-card py-4 px-3">
-                    <img style="border-radius:50%" height=100 width=100 src="{{ asset('images/' . $productshighlight->image) }}" alt="Detailed Recording icon" class="d-block m-auto">
-                    <h5 class="text-center pt-2 fw-bold">{{$productshighlight->heading}}</h5>
+                <div class="feature-page-card py-4 px-3">
+                    <img style="border-radius:50%" height=100 width=100 src="{{ asset('images/' . $servicehighlight->image) }}" alt="Detailed Recording icon" class="d-block m-auto">
+                    <h5 class="text-center pt-2 fw-bold">{{$servicehighlight->heading}}</h5>
                     <p class="text-center">
-                        {{$productshighlight->paragraph}}
+                        {{$servicehighlight->paragraph}}
                     </p>
                 </div>
             </div>
@@ -89,7 +89,7 @@
     </div>
 </section>
 
-<section class="light-bg-service-section px-lg-5 mt-lg-5 pt-5">
+{{--<section class="light-bg-service-section px-lg-5 mt-lg-5 pt-5">
     <div class="container">
         <div class="row px-xl-5">
             <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">

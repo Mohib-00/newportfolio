@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Feature;
 use App\Models\Service;
 use App\Models\ServiceBanner;
+use App\Models\ServiceHighlight;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -127,8 +128,8 @@ public function deleteservice(Request $request)
             return abort(404, 'service not found');
         }
         $servicebanners = ServiceBanner::whereIn('slug', $service->pluck('links'))->get();
-        /*$servicehighlights = serviceHighlight::whereIn('slug', $service->pluck('links'))->get();
-        $servicesection3s = servicesection3::whereIn('slug', $service->pluck('links'))->get();
+        $servicehighlights = ServiceHighlight::whereIn('slug', $service->pluck('links'))->get();
+        /*$servicesection3s = servicesection3::whereIn('slug', $service->pluck('links'))->get();
         $servicesection5s = servicesection5::whereIn('slug', $service->pluck('links'))->get();
     
         if ($servicebanners->isEmpty()) {
@@ -137,7 +138,7 @@ public function deleteservice(Request $request)
         $services = Service::all();
         $features = Feature::all();
         
-        return view('userpages.servicedetails', compact('service', 'servicebanners',/*'servicehighlights','servicesection3s','servicesection5s'*/'services','features'));
+        return view('userpages.servicedetails', compact('service', 'servicebanners','servicehighlights',/*'servicesection3s','servicesection5s',*/'services','features'));
     }
 
 

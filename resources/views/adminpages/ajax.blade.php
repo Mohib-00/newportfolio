@@ -525,6 +525,10 @@ function loadservicebanner() {
     loadPage('/admin/add-service-banner', '/admin/add-service-banner');
 }
 
+function loadservicehighlights() {
+    loadPage('/admin/add-service-highlights', '/admin/add-service-highlights');
+}
+
 </script>
 </body>
 
