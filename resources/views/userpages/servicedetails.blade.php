@@ -89,51 +89,76 @@
     </div>
 </section>
 
-{{--<section class="light-bg-service-section px-lg-5 mt-lg-5 pt-5">
+<section class="light-bg-service-section px-lg-5 mt-lg-5 pt-5">
     <div class="container">
-        <div class="row px-xl-5">
-            <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
-                <h2 class="theme-color fs-1 service-section-sub-heading fw-bold">
-                    @foreach ($servicesection3s as $inventory)
-                    @if (!empty($inventory->heading))
-                    {{$inventory->heading}}
-                    @endif
-                    @endforeach
+        @foreach ($servicesection3s as $inventory)
+            <div class="row px-xl-5 mb-5 align-items-center">
+                {{-- Text Section --}}
+                <div class="col-lg-7 px-4 px-lg-0 px-xl-4 pe-lg-5 order-2 order-lg-1 pt-5 pt-lg-0">
                     
-                </h2>
-                <p class="pe-lg-3 me-lg-3">
-                    @foreach ($servicesection3s as $inventory)
-                    @if (!empty($inventory->paragraph))
-                    {{$inventory->paragraph}}
+                    {{-- Main Heading --}}
+                    @if (!empty($inventory->heading))
+                        <h2 class="theme-color fs-1 service-section-sub-heading fw-bold">
+                            {{ $inventory->heading }}
+                        </h2>
                     @endif
-                    @endforeach
-                </p>
 
-                @foreach ($servicesection3s as $inventory)
-                <div class="d-flex py-3">
-                    <img style="border-radius:50%" class="services-inner-sectio-icon align-self-start" src="{{ asset('images/' . $inventory->sub_image) }}" alt="Save Important Documents icon">
-                    <div class="ps-3">
-                        <b>{{$inventory->sub_heading}}</b>
-                        <p class="pe-2 pe-lg-3 me-lg-3 pt-2">
-                            {{$inventory->sub_paragraph}}                        
+                    {{-- Main Paragraph --}}
+                    @if (!empty($inventory->paragraph))
+                        <p class="pe-lg-3 me-lg-3">
+                            {{ $inventory->paragraph }}
                         </p>
-                    </div>
-                </div>
-                @endforeach
+                    @endif
 
+                    {{-- Sub Content (Aligned Strictly Under Main Content) --}}
+                    @if (!empty($inventory->sub_image) || !empty($inventory->sub_heading) || !empty($inventory->sub_paragraph))
+                        <div class="d-flex align-items-start gap-3 py-3" style="max-width: 100%;">
+                            {{-- Sub Image --}}
+                            @if (!empty($inventory->sub_image))
+                                <img 
+                                    src="{{ asset('images/' . $inventory->sub_image) }}" 
+                                    alt="Sub Image" 
+                                    class="services-inner-sectio-icon"
+                                    width="80" height="80"
+                                    style="border-radius: 50%; flex-shrink: 0;"
+                                >
+                            @endif
+
+                            {{-- Sub Heading + Paragraph --}}
+                            <div style="max-width: 100%;">
+                                @if (!empty($inventory->sub_heading))
+                                    <strong>{{ $inventory->sub_heading }}</strong>
+                                @endif
+                                @if (!empty($inventory->sub_paragraph))
+                                    <p class="pt-2 mb-0">{{ $inventory->sub_paragraph }}</p>
+                                @endif
+                            </div>
+                        </div>
+                    @endif
+                </div>
+
+                {{-- Main Image --}}
+                @if (!empty($inventory->image))
+                    <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
+                        <img 
+                            src="{{ asset('images/' . $inventory->image) }}" 
+                            alt="Main Image" 
+                            class="services-section-tab-one-col-one-image pe-lg-4 pe-xl-0"
+                            width="600" height="400"
+                            style="max-width: 100%; height: auto;"
+                        >
+                    </div>
+                @endif
             </div>
-            @foreach ($servicesection3s as $inventory)
-            @if (!empty($inventory->image))
-            <div class="col-lg-5 ps-5 ps-lg-0 ps-xxl-5 d-lg-flex align-items-center order-lg-2">
-                <img class="services-section-tab-one-col-one-image pe-lg-4 pe-xl-0" src="{{ asset('images/' . $inventory->image) }}" alt="Hassle Free Inventory Management with moneypex">
-            </div>
-            @endif
-            @endforeach
-        </div>
+        @endforeach
     </div>
 </section>
 
-@if ($servicesection5s->isNotEmpty())
+
+
+
+
+{{--@if ($servicesection5s->isNotEmpty())
 <section class="light-bg-service-section px-lg-5 mt-lg-5 pt-5">
     <div class="container pt-sm-5">
         <div class="row px-xl-5">

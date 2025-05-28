@@ -529,6 +529,10 @@ function loadservicehighlights() {
     loadPage('/admin/add-service-highlights', '/admin/add-service-highlights');
 }
 
+function loadservicesection_3() {
+    loadPage('/admin/add-service-section_3', '/admin/add-service-section_3');
+}
+
 </script>
 </body>
 

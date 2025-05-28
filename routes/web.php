@@ -30,6 +30,7 @@ use App\Http\Controllers\Section5DetailPage;
 use App\Http\Controllers\ServiceBannercontroller;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceHighlightController;
+use App\Http\Controllers\ServiceSection3Controller;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserAuthcontroller;
 use Illuminate\Support\Facades\Route;
@@ -123,6 +124,7 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin'], function() {
     Route::get("services", [ServiceController::class, "openservices"]);
     Route::get("add-service-banner", [ServiceBannercontroller::class, "servicebanner"]);
     Route::get("add-service-highlights", [ServiceHighlightController::class, "servicehighlight"]);
+     Route::get("add-service-section_3", [ServiceSection3Controller::class, "servicesection3"]);
 });
 //to open forgot password page
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -344,3 +346,12 @@ Route::get('/servicehighlight/{id}', [ServiceHighlightController::class, 'showse
 Route::post('/servicehighlight/{id}', [ServiceHighlightController::class, 'updateservicehighlight'])->name('servicehighlight.update');
 //to delet servicehighlight
 Route::post('/delete-servicehighlight', [ServiceHighlightController::class, 'deleteservicehighlight'])->name('delete.servicehighlight');
+
+//to add servicesection3 data
+Route::post('/servicesection3/store', [ServiceSection3Controller::class, 'store'])->name('servicesection3.store');
+//to get servicesection3 data
+Route::get('/servicesection3/{id}', [ServiceSection3Controller::class, 'show'])->name('servicesection3.show');
+// Update servicesection3 data
+Route::post('/servicesection3/{id}', [ServiceSection3Controller::class, 'update'])->name('servicesection3.update');
+//to delet servicesection3
+Route::post('/delete-servicesection3', [ServiceSection3Controller::class, 'deleteservicesection3'])->name('delete.servicesection3');

@@ -244,6 +244,12 @@
                     <span class="sub-item">Add Highligts</span>
                     </a>
                     </li>
+
+                     <li>
+                  <a onclick="loadservicesection_3(); return false;" href="/admin/add-service-section_3">
+                    <span class="sub-item">Add Section 3</span>
+                  </a>
+                </li>
                   </ul>
                 </div>
               </li>
