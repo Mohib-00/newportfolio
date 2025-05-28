@@ -255,7 +255,47 @@
     @include('adminpages.ajax')
     <script>
         $(document).ready(function () {
-       
+            function createLoader() {
+    const loader = document.createElement('div');
+    loader.id = 'loader';
+    loader.style.position = 'fixed';
+    loader.style.top = '0';
+    loader.style.left = '0';
+    loader.style.width = '100%';
+    loader.style.height = '100%';
+    loader.style.backgroundColor = 'rgba(128, 128, 128, 0.6)';
+    loader.style.display = 'flex';
+    loader.style.alignItems = 'center';
+    loader.style.justifyContent = 'center';
+    loader.style.zIndex = '9999';
+
+    const spinner = document.createElement('div');
+    spinner.style.border = '6px solid #f3f3f3';
+    spinner.style.borderTop = '6px solid #3498db';
+    spinner.style.borderRadius = '50%';
+    spinner.style.width = '50px';
+    spinner.style.height = '50px';
+    spinner.style.animation = 'spin 0.8s linear infinite';
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    loader.appendChild(spinner);
+    document.body.appendChild(loader);
+}
+
+function removeLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.remove();
+    }
+}
    
            $(document).ready(function() {
         $('.addmain').click(function() {
@@ -289,7 +329,7 @@
            confirmButtonText: 'Yes, delete!'
        }).then((result) => {
            if (result.isConfirmed) {
-               $('#loader').fadeIn(300);
+            createLoader();
                $.ajaxSetup({
                    headers: { 'X-CSRF-TOKEN': csrfToken }
                });
@@ -300,7 +340,7 @@
                    data: { main_id: mainId },  
                    dataType: 'json',
                    success: function(response) {
-                       $('#loader').fadeOut(300);
+                    removeLoader();
                        if (response.success) {
                            $('.addmain').show();
                            row.remove(); 
@@ -318,7 +358,7 @@
                        }
                    },
                    error: function(xhr) {
-                       $('#loader').fadeOut(300);
+                    removeLoader();
                        console.error(xhr);
                        Swal.fire(
                            'Error',
@@ -335,7 +375,7 @@
     e.preventDefault();   
 
     let formData = new FormData(this);
-    $('#loader').show();
+    createLoader();
     $.ajax({
         url: "{{ route('main.store') }}",
         type: "POST",
@@ -343,8 +383,9 @@
         contentType: false,
         processData: false,
         success: function (response) {
-            $('#loader').hide();
+            removeLoader();
             if (response.success) {
+                removeLoader();
                 Swal.fire({
                     icon: 'success',
                     title: 'main Added!',
@@ -384,7 +425,7 @@
             }
         },
         error: function (xhr) {
-            $('#loader').hide();
+            removeLoader();
             let errors = xhr.responseJSON.errors;
             if (errors) {
                 let errorMessages = Object.values(errors)
@@ -396,7 +437,7 @@
                     text: errorMessages,
                     confirmButtonText: 'Ok'
                 });
-            }
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         }
     });
 });
@@ -405,13 +446,14 @@
 // get main data
 $(document).on('click', '.edit-main-btn', function () {
     var mainId = $(this).data('main-id');
-    $('#loader').show();
+    createLoader();
      $.ajax({
         url: "{{ route('main.show', '') }}/" + mainId, 
         type: "GET",  
         success: function (response) {
-            $('#loader').hide();
+            removeLoader();
             if (response.success) {
+                removeLoader();
                 $('#maineditform #mainforminput_edit').val(response.main.id);
                 if (response.main.image) {
                     $('#maineditform #image_edit').attr('src', "{{ asset('images') }}/" + response.main.image);
@@ -423,7 +465,7 @@ $(document).on('click', '.edit-main-btn', function () {
             }
         },
         error: function (xhr) {
-            $('#loader').hide();
+            removeLoader();
             Swal.fire({
                 icon: 'error',
                 title: 'Error!',
@@ -439,7 +481,7 @@ $('#maineditform').on('submit', function (e) {
    
        var formData = new FormData(this); 
        var mainId = $('#mainforminput_edit').val(); 
-       $('#loader').show();
+       createLoader();
      
        $.ajax({
            url: "{{ route('main.update', '') }}/" + mainId,  
@@ -448,8 +490,9 @@ $('#maineditform').on('submit', function (e) {
            contentType: false, 
            processData: false, 
            success: function (response) {
-               $('#loader').hide();
+            removeLoader();
                if (response.success) {
+                removeLoader();
                    Swal.fire({
                        icon: 'success',
                        title: 'Updated!',
@@ -476,7 +519,7 @@ $('#maineditform').on('submit', function (e) {
                }
            },
            error: function (xhr) {
-               $('#loader').hide();
+            removeLoader();
                let errors = xhr.responseJSON.errors;
                if (errors) {
                    let errorMessages = Object.values(errors)

@@ -187,50 +187,83 @@ animation: fadeIn 0.3s ease;">
 </div>
 </div>
 
-<div id="loader" style="display: none">
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="circle three"></div>
-  </div>
-
     @include('adminpages.js')
     @include('adminpages.ajax')
 
     <script>
-        //to get user
-    $(document).on('click', '.edit-user-btn', function() {
+
+function createLoader() {
+    const loader = document.createElement('div');
+    loader.id = 'loader';
+    loader.style.position = 'fixed';
+    loader.style.top = '0';
+    loader.style.left = '0';
+    loader.style.width = '100%';
+    loader.style.height = '100%';
+    loader.style.backgroundColor = 'rgba(128, 128, 128, 0.6)';
+    loader.style.display = 'flex';
+    loader.style.alignItems = 'center';
+    loader.style.justifyContent = 'center';
+    loader.style.zIndex = '9999';
+
+    const spinner = document.createElement('div');
+    spinner.style.border = '6px solid #f3f3f3';
+    spinner.style.borderTop = '6px solid #3498db';
+    spinner.style.borderRadius = '50%';
+    spinner.style.width = '50px';
+    spinner.style.height = '50px';
+    spinner.style.animation = 'spin 0.8s linear infinite';
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    loader.appendChild(spinner);
+    document.body.appendChild(loader);
+}
+
+function removeLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.remove();
+    }
+}
+
+$(document).on('click', '.edit-user-btn', function () {
     const userId = $(this).data('user-id');
     $('#edituserid').val(userId);
     const csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-    $('#loader').fadeIn(300);
+    createLoader();
+
     $.ajax({
-        url: '/get-user-data',  
+        url: '/get-user-data',
         type: 'POST',
         data: { user_id: userId },
         headers: { 'X-CSRF-TOKEN': csrfToken },
-        success: function(response) {
-            $('#loader').fadeOut(300);
+        success: function (response) {
+            removeLoader();
+
             if (response.success) {
-                 
                 $('#editUserId').val(response.user.id);
                 $('#editName').val(response.user.name);
                 $('#editEmail').val(response.user.email);
-                $('#editPassword').val('');  
+                $('#editPassword').val('');
                 $('#editUserType').val(response.user.userType);
 
-                
                 const currentUserId = response.currentUser ? response.currentUser.id : null;
                 const currentUserType = response.currentUser ? response.currentUser.userType : null;
 
-                 
                 if (userId === currentUserId) {
-                    
                     $('#editName').parent().show();
                     $('#editEmail').parent().show();
                     $('#editPassword').parent().show();
                 } else {
-                    
                     $('#editName').parent().hide();
                     $('#editEmail').parent().hide();
                     $('#editPassword').parent().hide();
@@ -238,13 +271,15 @@ animation: fadeIn 0.3s ease;">
                 $('#editUserModal').css('display', 'flex').hide().fadeIn(300);
             }
         },
-        error: function(xhr) {
-            $('#loader').fadeOut(300);
+        error: function (xhr) {
+            removeLoader();
+
             console.error(xhr);
             alert('Failed to retrieve user data.');
         }
     });
 });
+
 
 $('#close').on('click', function() {
         $('#editUserModal').fadeOut(300);
@@ -259,7 +294,7 @@ $(document).on('click', '#submitEdit', function() {
     let password = $('#editPassword').val();
     let userType = $('#editUserType').val();
 
-    $('#loader').fadeIn(300);
+    createLoader();
 
     $.ajax({
         url: `/users/${userId}/edit`,  
@@ -272,7 +307,7 @@ $(document).on('click', '#submitEdit', function() {
             _token: '{{ csrf_token() }}' 
         },
         success: function(response) {
-            $('#loader').fadeOut(300);
+            removeLoader();
             const userRow = $(`tr:has(button[data-user-id="${userId}"])`);
             userRow.find('td:nth-child(3)').text(name);  
             userRow.find('td:nth-child(4)').text(email);
@@ -287,7 +322,7 @@ $(document).on('click', '#submitEdit', function() {
             );
         },
         error: function(xhr) {
-            $('#loader').fadeOut(300);
+            removeLoader();
             alert('Error updating user: ' + xhr.responseJSON.message);
         }
     });

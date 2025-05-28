@@ -261,7 +261,49 @@
 
     <script>
         $(document).ready(function () {
+           
        
+       function createLoader() {
+const loader = document.createElement('div');
+loader.id = 'loader';
+loader.style.position = 'fixed';
+loader.style.top = '0';
+loader.style.left = '0';
+loader.style.width = '100%';
+loader.style.height = '100%';
+loader.style.backgroundColor = 'rgba(128, 128, 128, 0.6)';
+loader.style.display = 'flex';
+loader.style.alignItems = 'center';
+loader.style.justifyContent = 'center';
+loader.style.zIndex = '9999';
+
+const spinner = document.createElement('div');
+spinner.style.border = '6px solid #f3f3f3';
+spinner.style.borderTop = '6px solid #3498db';
+spinner.style.borderRadius = '50%';
+spinner.style.width = '50px';
+spinner.style.height = '50px';
+spinner.style.animation = 'spin 0.8s linear infinite';
+
+const style = document.createElement('style');
+style.innerHTML = `
+   @keyframes spin {
+       0% { transform: rotate(0deg); }
+       100% { transform: rotate(360deg); }
+   }
+`;
+document.head.appendChild(style);
+
+loader.appendChild(spinner);
+document.body.appendChild(loader);
+}
+
+function removeLoader() {
+const loader = document.getElementById('loader');
+if (loader) {
+   loader.remove();
+}
+}
    
            $(document).ready(function() {
         $('.addbanner').click(function() {
@@ -295,7 +337,7 @@
            confirmButtonText: 'Yes, delete!'
        }).then((result) => {
            if (result.isConfirmed) {
-               $('#loader').fadeIn(300);
+            createLoader();
                $.ajaxSetup({
                    headers: { 'X-CSRF-TOKEN': csrfToken }
                });
@@ -306,8 +348,9 @@
                    data: { banner_id: bannerId },  
                    dataType: 'json',
                    success: function(response) {
-                       $('#loader').fadeOut(300);
+                    removeLoader();
                        if (response.success) {
+                        removeLoader();
                            $('.addbanner').show();
                            row.remove(); 
                            Swal.fire(
@@ -324,7 +367,7 @@
                        }
                    },
                    error: function(xhr) {
-                       $('#loader').fadeOut(300);
+                    removeLoader();
                        console.error(xhr);
                        Swal.fire(
                            'Error',
@@ -341,7 +384,7 @@
        e.preventDefault();   
    
        let formData = new FormData(this);
-       $('#loader').show();
+       createLoader();
        $.ajax({
            url: "{{ route('banner.store') }}",
            type: "POST",
@@ -349,8 +392,9 @@
            contentType: false,
            processData: false,
            success: function (response) {
-               $('#loader').hide();
+            removeLoader();
                if (response.success) {
+                removeLoader();
                    Swal.fire({
                        icon: 'success',
                        title: 'Added!',
@@ -390,7 +434,7 @@
                }
            },
            error: function (xhr) {
-               $('#loader').hide();
+            removeLoader();
                let errors = xhr.responseJSON.errors;
                if (errors) {
                    let errorMessages = Object.values(errors)
@@ -411,14 +455,15 @@
    // get banner data
    $(document).on('click', '.edit-banner-btn', function () {
        var bannerId = $(this).data('banner-id');
-       $('#loader').show();
+       createLoader();
        $.ajax({
            url: "{{ route('banner.show', '') }}/" + bannerId, 
            type: "GET",  
            success: function (response) {
                console.log(response);
-               $('#loader').hide();
+               removeLoader();
                if (response.success) {
+                removeLoader();
                    $('#bannereditform #bannerforminput_edit').val(response.banner.id);
                    if (response.banner.image) {
                        $('#bannereditform #icon_edit').attr('src', "{{ asset('images') }}/" + response.banner.image);
@@ -431,7 +476,7 @@
                }
            },
            error: function (xhr) {
-               $('#loader').hide();
+            removeLoader();
                Swal.fire({
                    icon: 'error',
                    title: 'Error!',
@@ -449,7 +494,7 @@
    
        var formData = new FormData(this); 
        var bannerId = $('#bannerforminput_edit').val(); 
-       $('#loader').show();
+       createLoader();
      
        $.ajax({
            url: "{{ route('banner.update', '') }}/" + bannerId,  
@@ -458,8 +503,9 @@
            contentType: false, 
            processData: false, 
            success: function (response) {
-               $('#loader').hide();
+            removeLoader();
                if (response.success) {
+                removeLoader();
                    Swal.fire({
                        icon: 'success',
                        title: 'Updated!',
@@ -485,7 +531,7 @@
                }
            },
            error: function (xhr) {
-               $('#loader').hide();
+            removeLoader();
                let errors = xhr.responseJSON.errors;
                if (errors) {
                    let errorMessages = Object.values(errors)
